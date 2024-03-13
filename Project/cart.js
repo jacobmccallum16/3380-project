@@ -180,19 +180,33 @@ const Card2Col = (props) => {
   )
 }
 
+// Figure out what's in the cart
+let itemsInCart = [];
+let localStorageLength = localStorage.length
+for (let i = 0; i < localStorageLength; i++) {
+  let key = localStorage.key(i)
+  console.log(`key ${i}: ${key}`)
+  if (Number(localStorage.getItem(key)) > 0) {
+    itemsInCart.push(localStorage.key(i))
+  }
+}
+console.log(`itemsInCart:`)
+console.log(itemsInCart)
+
 const Main = () => {
+  // state = {
+  //   itemsInCart: itemsInCart
+  // }
+
   return (
     <main className="bg-teal-100 text-center p-3">
       <div className="bg-teal-200 rounded-3 pt-3">
         Container!!
         <div className="row g-3 p-3">
-          <Card2Col cols="4" link="products/8" prodId="8"/>
-          <Card2Col cols="4" link="products/4" prodId="4"/>
-          <Card2Col cols="4" link="products/6" prodId="6"/>
-          <Card2Col cols="4" link="products/7" prodId="7"/>
-          <Card1Col cols="4" link="products/1" prodId="1"/>
-          <Card1Col cols="4" link="products/3" prodId="3"/>
-          <Card1Col cols="4" link="products/5" prodId="5"/>
+          {itemsInCart.map(item => {
+            let link = `products/` + item
+            return (<Card2Col cols="4" link={link} prodId={item}/>)
+          })}
         </div>
       </div>
       Lots of text!
