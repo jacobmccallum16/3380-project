@@ -12,13 +12,13 @@ const Header = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-        <div className="navbar-nav px-3">
+          <div className="navbar-nav px-3">
             <a href="index.html" className="nav-link">Home</a>
             <a href="#" className="nav-link">Coffee</a>
-            <a href="tea.html" className="nav-link">Tea</a>
+            <a href="tea.html" className="nav-link active">Tea</a>
             <a href="#" className="nav-link">Chocolate</a>
             <a href="index.html" className="nav-link">About</a>
-            <a href="cart.html" className="nav-link active"><i className="bi bi-bag-fill"></i> Cart</a>
+            <a href="cart.html" className="nav-link"><i className="bi bi-bag-fill"></i> Cart</a>
           </div>
       </div>
       </div>
@@ -26,7 +26,6 @@ const Header = () => {
   </header>
   )
 }
-
 const COLS = ["col-auto", "col-12", 'col-12 col-lg-6', 'col-12 col-md-6 col-xl-4', 'col-12 col-sm-6 col-lg-4 col-xl-3']
 
 const CardCol = (props) => {
