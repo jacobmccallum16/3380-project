@@ -1,0 +1,93 @@
+:root {
+  --bg: rgba(255, 253, 247, 1);
+  --greentea: rgba(125, 128, 106, 1);
+  --lightgreen: rgba(222, 226, 189, 1);
+  --text: rgba(51, 51, 51, 1);
+  --brown: rgba(142, 103, 70, 1);
+  --newgreenlight: rgba(238, 240, 220, 1);
+  --logo: rgba(30, 49, 43, 1);
+  --01-headline-font-family: "Philosopher", Helvetica;
+  --01-headline-font-weight: 700;
+  --01-headline-font-size: 80px;
+  --01-headline-letter-spacing: 0px;
+  --01-headline-line-height: normal;
+  --01-headline-font-style: normal;
+  --small-text-font-family: "Roboto", Helvetica;
+  --small-text-font-weight: 400;
+  --small-text-font-size: 20px;
+  --small-text-letter-spacing: 4px;
+  --small-text-line-height: normal;
+  --small-text-font-style: normal;
+  --text-font-family: "Roboto", Helvetica;
+  --text-font-weight: 300;
+  --text-font-size: 20px;
+  --text-letter-spacing: 0px;
+  --text-line-height: normal;
+  --text-font-style: normal;
+  --02-headline-font-family: "Philosopher", Helvetica;
+  --02-headline-font-weight: 700;
+  --02-headline-font-size: 50px;
+  --02-headline-letter-spacing: 0px;
+  --02-headline-line-height: normal;
+  --02-headline-font-style: normal;
+  --small-tittle-font-family: "Philosopher", Helvetica;
+  --small-tittle-font-weight: 700;
+  --small-tittle-font-size: 30px;
+  --small-tittle-letter-spacing: 0px;
+  --small-tittle-line-height: normal;
+  --small-tittle-font-style: normal;
+
+  --black: #000000;
+  --brown: #8e6746;
+  --cararra: #ebebeb;
+  --greentea: #7d806a;
+  --logo: #1e312b;
+  --text: #333333;
+ 
+  --font-size-l: 30px;
+  --font-size-m: 20px;
+  --font-size-xl: 50px;
+ 
+  --font-family-philosopher: "Philosopher", Helvetica;
+  --font-family-roboto: "Roboto", Helvetica;
+}
+
+.smalltext {
+  font-family: var(--font-family-roboto);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 4px;
+}
+
+.text {
+  font-family: var(--font-family-roboto);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 0;
+}
+
+.x02-headline {
+  font-family: var(--font-family-philosopher);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.smalltittle {
+  font-family: var(--font-family-philosopher);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.roboto-normal-mine-shaft-20px {
+  color: var(--text);
+  font-family: var(--font-family-roboto);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
