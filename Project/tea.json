@@ -4,7 +4,7 @@
 		"type": "Oolong Tea",
 		"description": "Indulge in the honey-sweet aroma and complex flavor of Oriental Beauty Oolong. Grown in Taiwan, this semi-oxidized tea boasts notes of ripe fruit and subtle floral undertones.",
 		"origin": "Taiwan",
-		"harvest_season": "Summer",
+		"harvestSeason": "Summer",
 		"price": 32.5,
 		"quantity": 75,
 		"image": "https://m.media-amazon.com/images/I/81kvum+q4dL._AC_SL1500_.jpg"
@@ -14,7 +14,7 @@
 		"type": "Black Tea",
 		"description": "Savor the bold and malty flavor of Assam Black Tea. Cultivated in the Assam region of India, this tea offers a robust taste with hints of caramel and spice.",
 		"origin": "Assam, India",
-		"harvest_season": "Autumn",
+		"harvestSeason": "Autumn",
 		"price": 19.99,
 		"quantity": 80,
 		"image": "https://m.media-amazon.com/images/I/81hve+ZGfXL._AC_SL1500_.jpg"
@@ -24,7 +24,7 @@
 		"type": "White Tea",
 		"description": "Discover the purity and delicacy of Silver Needle White Tea. Handpicked from tender tea buds, this tea delivers a subtle sweetness and a refreshing, clean finish.",
 		"origin": "Fujian Province, China",
-		"harvest_season": "Spring",
+		"harvestSeason": "Spring",
 		"price": 28.99,
 		"quantity": 60,
 		"image": "https://m.media-amazon.com/images/I/71nDQ8sR20L._AC_SL1500_.jpg"
@@ -34,7 +34,7 @@
 		"type": "Herbal Tea",
 		"description": "Refresh your senses with Peppermint Herbal Tea. Made from organic peppermint leaves, this invigorating tea offers a cooling menthol flavor and digestive benefits.",
 		"origin": "United States",
-		"harvest_season": "Summer",
+		"harvestSeason": "Summer",
 		"price": 16.99,
 		"quantity": 90,
 		"image": "https://m.media-amazon.com/images/I/71k3xg+yOsL._AC_SL1377_.jpg"
@@ -44,7 +44,7 @@
 		"type": "Black Tea",
 		"description": "Indulge in the creamy richness of Earl Grey Cream Tea. This twist on the classic Earl Grey blend features bergamot-infused black tea with a hint of vanilla for a luxurious taste experience.",
 		"origin": "Various",
-		"harvest_season": null,
+		"harvestSeason": null,
 		"price": 21.99,
 		"quantity": 70,
 		"image": "https://example.com/earl_grey_cream_tea.jpg"
@@ -54,7 +54,7 @@
 		"type": "Green Tea",
 		"description": "Experience the fresh and grassy flavor of Japanese Sencha Green Tea. Grown in the hills of Japan, this steamed green tea offers a vibrant green color and a refreshing taste.",
 		"origin": "Japan",
-		"harvest_season": "Spring",
+		"harvestSeason": "Spring",
 		"price": 26.5,
 		"quantity": 55,
 		"image": "https://m.media-amazon.com/images/I/91mKxJeZBML.jpg"
@@ -64,7 +64,7 @@
 		"type": "Black Tea",
 		"description": "Enjoy the floral aroma and light, muscatel flavor of Darjeeling First Flush Tea. Harvested during the first flush of the growing season, this tea is prized for its delicate character.",
 		"origin": "Darjeeling, India",
-		"harvest_season": "Spring",
+		"harvestSeason": "Spring",
 		"price": 34.99,
 		"quantity": 45,
 		"image": "https://m.media-amazon.com/images/I/51pJx9Er5cL._AC_SL1000_.jpg"
@@ -74,7 +74,7 @@
 		"type": "Herbal Tea",
 		"description": "Relax and unwind with Lavender Chamomile Herbal Tea. This soothing blend combines fragrant lavender flowers with chamomile for a calming and aromatic infusion.",
 		"origin": "Various",
-		"harvest_season": null,
+		"harvestSeason": null,
 		"price": 18.75,
 		"quantity": 85,
 		"image": "https://m.media-amazon.com/images/I/81S9XOR4hNL.__AC_SX300_SY300_QL70_ML2_.jpg"
@@ -84,7 +84,7 @@
 		"type": "Green Tea",
 		"description": "Delight in the rich umami flavor and vibrant green color of Gyokuro Green Tea. Grown in shaded fields in Japan, this premium tea offers a complex taste with sweet and savory notes.",
 		"origin": "Japan",
-		"harvest_season": "Spring",
+		"harvestSeason": "Spring",
 		"price": 42.99,
 		"quantity": 40,
 		"image": "https://m.media-amazon.com/images/I/81YVyUhd3vS._AC_SL1500_.jpg"
@@ -94,7 +94,7 @@
 		"type": "Rooibos Tea",
 		"description": "Indulge in the warming spices and creamy vanilla flavor of Rooibos Vanilla Chai. This caffeine-free blend combines rooibos with cinnamon, ginger, cardamom, and cloves for a comforting treat.",
 		"origin": "South Africa",
-		"harvest_season": null,
+		"harvestSeason": null,
 		"price": 20.49,
 		"quantity": 65,
 		"image": "https://m.media-amazon.com/images/I/81Xf0DEZ6KL._AC_SL1500_.jpg"

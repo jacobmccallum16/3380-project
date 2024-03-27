@@ -15,21 +15,13 @@ const Header = () => {
           
           <div className="col-sm" id="navbarNav">
             <div className="navbar-nav">
-              <a href="index.html" className="nav-link">
-                Home
-              </a>
-              <a href="#divStandings" className="nav-link">
-                Tea
-              </a>
-              <a href="index.html" className="nav-link">
-                About
-              </a>
+              <a href="index.html" className="nav-link">Home</a>
+              <a href="tea.html" className="nav-link">Tea</a>
+              <a href="index.html" className="nav-link">About</a>
+              <a href="cart.html" className="nav-link"><i className="bi bi-bag-fill"></i> Cart</a>
             </div>
           </div>
           <div className="cart">
-            <a href="cart.html" className="nav-link">
-              <i className="bi bi-bag-fill"></i> Cart
-            </a>
           </div>
           
           <button
