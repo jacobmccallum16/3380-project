@@ -36,7 +36,7 @@ const CardCol = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let response = await fetch(`https://fakestoreapi.com/${props.link}`);
+        let response = await fetch(`${URI}/${props.link}`);
         let result = await response.json();
         setData(result);
         let qty = localStorage.getItem(props.prodId) == null ? 0 : localStorage.getItem(props.prodId)
@@ -129,6 +129,8 @@ for (let i = 0; i < localStorageLength; i++) {
 console.log(`itemsInCart:`)
 console.log(itemsInCart)
 
+const URI = "mongodb://localhost:27017/3380-Project/api"
+
 const Main = () => {
   // state = {
   //   itemsInCart: itemsInCart
@@ -139,10 +141,12 @@ const Main = () => {
       <div className="bg-teal-200 rounded-3 pt-3">
         Container!!
         <div className="row g-3 p-3">
-          {itemsInCart.map(item => {
+          {/* {itemsInCart.map(item => {
             let link = `products/` + item
             return (<CardCol cols="4" link={link} prodId={item}/>)
-          })}
+          })} */}
+          <CardCol cols="4" link={URI} prodId="66038705affa555056fae026"/>
+          <CardCol cols="4" link={URI} prodId="6603870daffa555056fae028"/>
         </div>
       </div>
       Lots of text!
