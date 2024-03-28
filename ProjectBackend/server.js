@@ -2,6 +2,9 @@ const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 
+require('dotenv').config();
+const URI = process.env.MONGODB_URI
+
 const app = express()
 const port = process.env.PORT || 3000; // MAC might be different for this part??
 
@@ -9,7 +12,8 @@ const port = process.env.PORT || 3000; // MAC might be different for this part??
 app.use(cors())
 app.use(express.json())
 
-const URI = "mongodb://localhost:27017/3380-Project"
+// const URI = "mongodb://localhost:27017/3380-Project"
+// "/teaorganic/teas"
 mongoose.connect(URI, {useNewUrlParser: true, useUnifiedTopology: true})
 	.then (() => {
 		console.log(`Connected to MongoDB server!!`)

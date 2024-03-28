@@ -1,3 +1,4 @@
 **/.DS_Store
 ProjectBackend/node_modules
 Project/node_modules
+ProjectBackend/.env
