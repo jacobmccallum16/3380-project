@@ -1,5 +1,12 @@
 const {useState, useEffect} = React;
 
+function formatPrice(price) {
+  let dollars = Math.floor(price)
+  let cents = Math.round((price - dollars) * 100)
+  let formattedPrice = `$ ${dollars}.${cents}`
+  return formattedPrice
+}
+
 const Header = () => {
   return (
     <header>
@@ -72,8 +79,8 @@ const CardCol = (props) => {
               </div>
               <h5 className="card-title text-start">{data.title}</h5>
               <h6 className="row">
-                <span className="col-auto">{data.category}</span>
-                <span className="ms-auto col-auto">{data.rating.rate} ⭐️</span>
+                <span className="col-auto">{data.type}</span>
+                <span className="ms-auto col-auto">{formatPrice(data.price)}</span>
               </h6>
               <p className="card-text text-start small">&emsp;{data.description}</p>
             </div>
@@ -139,7 +146,6 @@ const Main = () => {
   return (
     <main className="bg-teal-100 text-center p-3">
       <div className="bg-teal-200 rounded-3 pt-3">
-        Container!!
         <div className="row g-3 p-3">
           {/* {itemsInCart.map(item => {
             let link = `products/` + item
@@ -147,9 +153,26 @@ const Main = () => {
           })} */}
           <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72011e"/>
           <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720122"/>
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720123"/>
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720126"/>
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720128"/>
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012a"/>
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012d"/>
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72011c"/>
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72011d"/>
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72011f"/>
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720120"/>
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720121"/>
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720125"/>
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720127"/>
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012c"/>
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012e"/>
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012f"/>
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720124"/>
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720129"/>
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012b"/>
         </div>
       </div>
-      Lots of text!
     </main>
   )
 }
