@@ -26,6 +26,7 @@ mongoose.connect(URI, {useNewUrlParser: true, useUnifiedTopology: true})
 const Schema = mongoose.Schema
 
 const teaSchema = new Schema({
+	id: {type: Number, required: true},
 	title: {type: String, required: true},
 	type: {type: String, required: true},
 	description: {type: String, required: true},
