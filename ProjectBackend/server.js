@@ -3,10 +3,11 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 
 require('dotenv').config();
-const URI = process.env.MONGODB_URI
+// const URI = process.env.MONGODB_URI
+const URI = "mongodb+srv://jacob:mango@fullstackproject.pijv5qw.mongodb.net/teaorganic?retryWrites=true&w=majority&appName=fullstackproject"
 
 const app = express()
-const port = process.env.PORT || 3000; // MAC might be different for this part??
+const port = process.env.PORT || 3003; // MAC might be different for this part??
 
 // Middlewares
 app.use(cors())
