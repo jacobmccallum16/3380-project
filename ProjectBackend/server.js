@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
+const http = require('http')
 
 require('dotenv').config();
 // const URI = process.env.MONGODB_URI
@@ -18,7 +19,9 @@ app.use(express.json())
 mongoose.connect(URI, {useNewUrlParser: true, useUnifiedTopology: true})
 	.then (() => {
 		console.log(`Connected to MongoDB server!!`)
-		app.listen(port, () => console.log(`Server is running on port ${port}`))
+		const server = http.createServer(app)
+		server.listen(port, () => {console.log(`HTTP Server is running on port ${port}`)})
+		// app.listen(port, () => console.log(`Server is running on port ${port}`))
 	})
 	.catch((error) => {
 		console.log(`Error: connecting to MongoDB ${error.toString()}`)
