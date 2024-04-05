@@ -137,7 +137,7 @@ for (let i = 0; i < localStorageLength; i++) {
 console.log(`itemsInCart:`)
 console.log(itemsInCart)
 
-const URI = "http://127.0.0.1:3003/api"
+const URI = "http://35.197.51.48:3003/api"
 
 const Main = () => {
   // state = {
