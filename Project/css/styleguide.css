@@ -50,6 +50,31 @@
  
   --font-family-philosopher: "Philosopher", Helvetica;
   --font-family-roboto: "Roboto", Helvetica;
+
+  --bg: #fffcf6;
+  --black: #000000;
+  --brown: #8e6746;
+  --cararra: #ebebeb;
+  --eerie-black: #1e1e1e;
+  --greentea: #7d806a;
+  --logo: #1e312b;
+  --scorpion: #686262;
+  --soapstone: #fffbf8;
+  --text: #333333;
+ 
+  --font-size-l: 30px;
+  --font-size-m: 20px;
+  --font-size-s: 15px;
+  --font-size-xl: 50px;
+  --font-size-xs: 14px;
+  --font-size-xxl: 64px;
+  --font-size-xxs: 12px;
+ 
+  --font-family-gt_walsheim_pro-regular: "GT Walsheim Pro-Regular", Helvetica;
+  --font-family-philosopher: "Philosopher", Helvetica;
+  --font-family-roboto: "Roboto", Helvetica;
+  --font-family-roboto-regular: "Roboto-Regular", Helvetica;
+  --font-family-roboto_serif-regular: "Roboto Serif-Regular", Helvetica;
 }
 
 .smalltext {
@@ -91,3 +116,77 @@
   font-style: normal;
   font-weight: 400;
 }
+:root { 
+  --black: #000000;
+  --brown: #8e6746;
+  --cararra: #ebebeb;
+  --eerie-black: #1e1e1e;
+  --greentea: #7d806a;
+  --logo: #1e312b;
+  --scorpion: #686262;
+  --text: #333333;
+ 
+  --font-size-l: 15px;
+  --font-size-m: 14px;
+  --font-size-s: 12px;
+  --font-size-xl: 20px;
+  --font-size-xxl: 30px;
+  --font-size-xxxl: 36px;
+  --font-size-xxxxl: 50px;
+ 
+  --font-family-gt_walsheim_pro-regular: "GT Walsheim Pro-Regular", Helvetica;
+  --font-family-philosopher-bold: "Philosopher-Bold", Helvetica;
+  --font-family-poppins: "Poppins", Helvetica;
+  --font-family-roboto: "Roboto", Helvetica;
+  --font-family-roboto-light: "Roboto-Light", Helvetica;
+  --font-family-roboto_serif: "Roboto Serif", Helvetica;
+  --black: #000000;
+  --logo: #1e312b;
+ 
+  --font-size-l: 16px;
+  --font-size-m: 14px;
+  --font-size-s: 13px;
+  --font-size-xl: 20px;
+ 
+  --font-family-poppins: "Poppins", Helvetica;
+}
+.smalltext {
+  font-family: var(--font-family-roboto);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 4px;
+}
+
+.text {
+  font-family: var(--font-family-roboto-light);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 0;
+}
+
+.x02-headline {
+  font-family: var(--font-family-philosopher-bold);
+  font-size: var(--font-size-xxxxl);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.smalltittle {
+  font-family: var(--font-family-philosopher-bold);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.roboto-normal-mine-shaft-20px {
+  color: var(--text);
+  font-family: var(--font-family-roboto);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 400;
+}
+

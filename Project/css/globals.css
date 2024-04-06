@@ -70,3 +70,115 @@ a {
   margin-top: 994px;
   width: 397px;
 }
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Serif:400|Roboto:400,700");
+/* The following line is used to measure usage of this code. You can remove it if you want. */
+@import url("https://px.animaapp.com/656a90430f49427113e94d5b.656a90430f49427113e94d5e.d9k1jax.hcp.png");
+
+@font-face {
+  font-family: "GT Walsheim Pro-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/GT-Walsheim-Pro-Regular.otf") format("opentype");
+}
+
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.x03-4 {
+  height: 559px;
+  margin-right: 954.0px;
+  margin-top: 54px;
+  object-fit: cover;
+  width: 608px;
+}
+
+.x06-1 {
+  height: 476px;
+  left: 184px;
+  object-fit: cover;
+  position: absolute;
+  top: 78px;
+  width: 483px;
+}
+
+.x03-3 {
+  height: 630px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 686px;
+}
+
+.flex-col-3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.x06-1 {
+  height: 476px;
+  left: 184px;
+  object-fit: cover;
+  position: absolute;
+  top: 78px;
+  width: 483px;
+}
+
+.x03-3 {
+  height: 630px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 686px;
+}
+
+.flex-col-3 {
+  display: flex;
+  flex-direction: column;
+}
+

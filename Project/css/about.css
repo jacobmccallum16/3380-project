@@ -1,0 +1,340 @@
+body,html{
+    width:100%;
+  }
+  #reactDiv {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width:100%;
+  }
+
+  header{
+    width:100%;
+    background-color: #EBEBEB;
+    
+  }
+  .bgimg{
+    width:100%;
+  }
+  main {
+    flex: 1;
+    width:100%;
+    background-color: #FFFDF7;
+  }
+
+  .navbar {
+    background-color: #FFFDF7;
+    border-bottom: 0.1px solid black;
+  }
+  .container-fluid{
+    width:100%;
+    background-color: #FFFDF7;
+  }
+  .navbar-nav a {
+    color:#1e312a;
+    font-family: "Philosopher-Bold", Helvetica;
+    
+  }
+  
+  .nav-link:hover{
+    color:rgb(88, 192, 149);
+  }
+  .navbar-nav .nav-link:active,
+  .navbar-nav .nav-link:focus {
+    color: rgb(88, 192, 149);
+  }
+  .logoimg{
+    margin-left: 5%;
+  }
+  #navbarNav{
+    margin-left: 10px;
+  }
+  .cart{
+    margin-right: 5%;
+  }
+  /* screen - about */
+
+.about {
+    align-items: flex-start;
+    background-color: var(--soapstone);
+    display: flex;
+    flex-direction: column;
+    height: 1665px;
+    overflow: hidden;
+    width: 1280px;
+  }
+  
+  .about .about-us {
+    color: var(--greentea);
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 150px;
+    margin-top: 87px;
+    min-height: 67px;
+    width: 322px;
+  }
+  
+  .about .overlap-group {
+    align-items: flex-start;
+    align-self: center;
+    background-image: url(../public/rectangle-32.png);
+    background-size: 100% 100%;
+    display: flex;
+    height: 301px;
+    justify-content: flex-end;
+    margin-left: 2.0px;
+    margin-top: 22px;
+    min-width: 982px;
+    padding: 134px 131px;
+  }
+  
+  .about .title {
+    color: var(--bg);
+    font-family: var(--font-family-roboto);
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 30px;
+    white-space: nowrap;
+  }
+  
+  .about .at-tea-organic-we-ar {
+    align-self: center;
+    color: var(--text);
+    font-weight: 400;
+    line-height: 30px;
+    margin-left: 6.0px;
+    margin-top: 45px;
+    min-height: 1084px;
+    width: 986px;
+  }
+  
+  .about .span {
+    font-weight: 300;
+  }
+  
+  .about .span-1 {
+    letter-spacing: 0;
+    font-weight: bold;
+  }
+  
+  .about .overlap-group1 {
+    align-self: flex-end;
+    height: 630px;
+    margin-right: -932px;
+    margin-top: 2681px;
+    position: relative;
+    width: 686px;
+  }
+  
+  .about .bag-fill-frame {
+    height: 21px;
+    margin-left: -3994px;
+    margin-top: 363px;
+    width: 18px;
+  }
+  
+  .about .flex-row {
+    align-items: flex-start;
+    display: flex;
+    height: 1056px;
+    margin-left: -5433.49px;
+    margin-top: 516px;
+    min-width: 6865px;
+  }
+  
+  .about .x03-2 {
+    align-self: center;
+    height: 429px;
+    margin-top: 267.0px;
+    object-fit: cover;
+    width: 467px;
+  }
+  
+  .about .x06-2 {
+    align-self: flex-end;
+    height: 552px;
+    margin-left: 4946px;
+    object-fit: cover;
+    width: 558px;
+  }
+  
+  .about .x03-5 {
+    height: 468px;
+    margin-left: 335px;
+    object-fit: cover;
+    width: 559px;
+  }
+  
+  .about .x03-4 {
+    height: 559px;
+    margin-left: -130px;
+    margin-top: 54px;
+    object-fit: cover;
+    width: 608px;
+  }
+  
+  .about .x04-1 {
+    height: 585px;
+    margin-left: -4254px;
+    margin-top: 2071px;
+    object-fit: cover;
+    width: 552px;
+  }
+
+  /* footer */
+  .frame {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height:300px;
+    background-color: #1e312a;
+  }
+  
+  .frame .overlap-group-wrapper {
+    width: 100%;
+    height: auto;
+  }
+  
+  .frame .overlap-group {
+    position: relative;
+    height: 300px;
+    top: 29px;
+    background-color: var(--logo);
+  }
+  
+  .frame .socila-icons {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 39px;
+    position: absolute;
+    top: 200px;
+    left: 43%;
+  }
+  
+  .frame .img {
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .frame .sitemap {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 50px;
+    left: 5%;
+    color: #FFFDF7;
+  }
+  
+  .frame .text-wrapper {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Philosopher-Bold", Helvetica;
+    font-weight: 700;
+    color: var(--newgreenlight);
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .frame .div {
+    position: relative;
+    width: fit-content;
+    font-family: "Roboto-Light", Helvetica;
+    font-weight: 300;
+    color: var(--newgreenlight);
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .frame .div-wrapper {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 12px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .frame .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Roboto-Light", Helvetica;
+    font-weight: 300;
+    color: var(--newgreenlight);
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .frame .sitemap-2 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 50px;
+    right:5%;
+    color: #FFFDF7;
+  }
+  
+  .frame .line {
+    width: 1px;
+    height: 134px;
+    top: 97px;
+    left: 728px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .frame .line-2 {
+    width: 1px;
+    height: 134px;
+    top: 97px;
+    left: 1193px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .frame .line-3 {
+    width: 1920px;
+    height: 1px;
+    top: 342px;
+    left: 0;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .frame .text-wrapper-3 {
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    font-family: "Roboto-Light", Helvetica;
+    font-weight: 300;
+    color: #FFFDF7;
+    background-color: #1e312a;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: revert;
+    white-space: nowrap;
+  }
+  
+  .frame .whitetrans {
+    position: absolute;
+    width: 320px;
+    height: 151px;
+    top: 20px;
+    left: 40%;
+    object-fit: cover;
+  }
