@@ -49,87 +49,10 @@ const Header = () => {
   );
 };
 
-const Card1 = (props) => {
-  const [data, setData] = useState(null);
+const COLS = ["col-auto", "col-12", 'col-12 col-lg-6', 'col-12 col-md-6 col-xl-4', 'col-12 col-sm-6 col-lg-4 col-xl-3']
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        let response = await fetch(`https://fakestoreapi.com/${props.link}`);
-        let result = await response.json();
-        setData(result);
-        // console.log(result)
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+const CardCol = (props) => {
 
-    fetchData();
-  }, []);
-
-  const handleClick = (params) => {
-    fetchStuff(params);
-  };
-  return (
-    <div className="card h-100">
-      {data ? (
-        <div className="card-header fw-bold">
-          {data.id}: {data.title}
-        </div>
-      ) : (
-        <div className="card-header">Featured</div>
-      )}
-      {data ? (
-        <div className="card-body h-100">
-          <img src={data.image} className="mb-1" height="150" width="150"></img>
-          <p className="card-text">{data.description}</p>
-        </div>
-      ) : (
-        <div className="card-body">
-          <img className="mb-1" height="150" width="150"></img>
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-        </div>
-      )}
-      <div className="card-footer">
-        <button
-          onClick={() => handleClick(props.link)}
-          className="btn btn-primary"
-        >
-          {props.link}
-        </button>
-      </div>
-    </div>
-  );
-};
-
-async function fetchStuff(params) {
-  let obj = await fetch(`https://fakestoreapi.com/${params}`);
-  let text = await obj.text();
-  let data = JSON.parse(text);
-  console.log(text);
-  alert(params);
-}
-
-const COLS = [
-  "col-auto",
-  "col-12",
-  "col-12 col-lg-6",
-  "col-12 col-md-6 col-xl-4",
-  "col-12 col-sm-6 col-lg-4 col-xl-3",
-];
-
-const Card1Col = (props) => {
-  return (
-    <div className={COLS[props.cols]}>
-      <Card1 link={props.link} />
-    </div>
-  );
-};
-
-const Card2Col = (props) => {
   const [data, setData] = useState(null);
   const [inCartQty, setInCartQty] = useState(0);
 
@@ -268,9 +191,9 @@ const Main = () => {
       <div className="bg-teal-200 rounded-3 pt-3">
         Container!!
         <div className="row g-3 p-3">
-          {itemsInCart.map((item) => {
-            let link = `products/` + item;
-            return <Card2Col cols="4" link={link} prodId={item} />;
+          {itemsInCart.map(item => {
+            let link = `products/` + item
+            return (<CardCol cols="4" link={link} prodId={item}/>)
           })}
         </div>
       </div>
