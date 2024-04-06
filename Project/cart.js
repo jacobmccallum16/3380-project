@@ -49,7 +49,13 @@ const Header = () => {
   );
 };
 
-const COLS = ["col-auto", "col-12", 'col-12 col-lg-6', 'col-12 col-md-6 col-xl-4', 'col-12 col-sm-6 col-lg-4 col-xl-3']
+const COLS = [
+  "col-auto",
+  "col-12",
+  "col-12 col-lg-6",
+  "col-12 col-md-6 col-xl-4",
+  "col-12 col-sm-6 col-lg-4 col-xl-3",
+];
 
 const CardCol = (props) => {
 
