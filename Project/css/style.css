@@ -21,17 +21,23 @@ main {
 
 header{
   width:100%;
-  background-color: #EBEBEB;
+  background-color: #F4F3EE;
+  
 }
 .bgimg{
   width:100%;
 }
 .container-fluid{
   width:100%;
-  background-color: #EBEBEB;
+  background-color: #F4F3EE;
+  
 }
 .navbar-nav a {
   color:#1e312a;
+}
+.navbar{
+  /* border-bottom: 0.1px solid black; */
+
 }
 
 .nav-link:hover{

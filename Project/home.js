@@ -14,13 +14,13 @@ const Header = () => {
 
           <div className="col-sm" id="navbarNav">
             <div className="navbar-nav">
-              <a href="index.html" className="nav-link">
+              <a href="home.html" className="nav-link">
                 Home
               </a>
-              <a href="#divStandings" className="nav-link">
+              <a href="index.html" className="nav-link">
                 Tea
               </a>
-              <a href="index.html" className="nav-link">
+              <a href="about.html" className="nav-link">
                 About
               </a>
             </div>
@@ -44,7 +44,7 @@ const Header = () => {
           </button>
         </div>
       </nav>
-      <img href="" src="./public/bg.png" className="bgimg" />
+      <img href="" src="./public/homebg.png" className="bgimg" />
     </header>
   );
 };
@@ -53,75 +53,179 @@ const Main = () => {
   return (
     <main>
       <input type="hidden" id="anPageName" name="page" value="tea" />
-        <div className="container-center-horizontal">
-            <div className="tea screen">
-                <div className="flex-col flex">
-
-                    <div className="overlap-group6">
-                        <div className="overlap-group3">
-                            <img
-                            className="x03-1"
-                            src="public/homeimg/03-1.png"
-                            alt="03 1"
-                            />
-                            <div className="frame-2">
-                            <img
-                                className="ellipse-24"
-                                src="public/homeimg/ellipse-24-1@2x.png"
-                                alt="Ellipse 24"
-                            />
-                                <div className="flex-col-1 flex-col-7">
-                                    <div className="advantages smalltext">ADVANTAGES</div>
-                                    <p className="the-hidden-health-benefits-of-tea x02-headline">
-                                    The Hidden Health Benefits Of Tea
-                                    </p>
-                                    <p className="lorem-ipsum-dolor-si text">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    In commodo enim sit amet magna semper lacinia. Lorem ipsum
-                                    dolor sit amet, consectetur adipiscing elit. In commodo
-                                    enim sit amet.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    <div className="since-2022 smalltext">SINCE 2022</div>
-                    </div>
-
-                    <h1 className="why-choose-us x02-headline">Why Choose Us</h1>
-                    <p className="lorem-ipsum-dolor-si-1 text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                    commodo enim sit amet magna semper lacinia. Lorem ipsum dolor sit
-                    amet.
+      <div class="container-center-horizontal">
+        <div class="tea screen">
+          <div class="flex-col">
+            <div class="overlap-group6">
+              <div class="overlap-group2">
+                <img class="x03-1" src="public/homeimg/03-1.png" alt="03 1" />
+                <div class="frame-2">
+                  <img
+                    class="ellipse-24"
+                    src="public/homeimg/ellipse-24-1@2x.png"
+                    alt="Ellipse 24"
+                  />
+                  <div class="flex-col-1 flex-col-3">
+                    <div class="advantages smalltext">ADVANTAGES</div>
+                    <p class="the-hidden-health-benefits-of-tea x02-headline">
+                      The Hidden Health Benefits Of Tea
                     </p>
+                    <p class="lorem-ipsum-dolor-si text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      In commodo enim sit amet magna semper lacinia. Lorem ipsum
+                      dolor sit amet, consectetur adipiscing elit. In commodo
+                      enim sit amet.
+                    </p>
+                  </div>
                 </div>
-
-                <div className="asset-container">
-                    <img
-                    className="asset"
-                    src="public/homeimg/asset-2-4x.png"
-                    alt="Asset 2@4x"
-                    />
-                    <img
-                    className="asset-44x"
-                    src="public/homeimg/asset-4-4x.png"
-                    alt="Asset 4@4x"
-                    />
-                    <img
-                    className="asset"
-                    src="public/homeimg/asset-3-4x.png"
-                    alt="Asset 3@4x"
-                    />
-                </div>
-
-                <div className="text-container">
-                    <div className="organic-products">Organic Products</div>
-                    <div className="great-customer-service">Great Customer Service</div>
-                    <div className="natural-ingredients">Natural Ingredients</div>
-                </div>
-
-                
+              </div>
+              <div class="since-2022 smalltext">SINCE 2022</div>
             </div>
+            <h1 class="why-choose-us x02-headline">Why Choose Us</h1>
+            <p class="lorem-ipsum-dolor-si-1 text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+              commodo enim sit amet magna semper lacinia. Lorem ipsum dolor sit
+              amet.
+            </p>
+          </div>
+          <div class="asset-container">
+            <img
+              class="asset"
+              src="public/homeimg/asset-2-4x.png"
+              alt="Asset 2@4x"
+            />
+            <img
+              class="asset-44x"
+              src="public/homeimg/asset-4-4x.png"
+              alt="Asset 4@4x"
+            />
+            <img
+              class="asset"
+              src="public/homeimg/asset-3-4x.png"
+              alt="Asset 3@4x"
+            />
+          </div>
+          <div class="flex-row">
+            <div class="flex-col-2 flex-col-3">
+              <div class="flex-row-1 smalltittle">
+                <div class="organic-products">Organic Products</div>
+                <div class="great-customer-service">Great Customer Service</div>
+                <div class="natural-ingredients">Natural Ingredients</div>
+              </div>
+              <div class="our-unique-tea-blends x02-headline">
+                Our Unique Tea Blends
+              </div>
+              <div class="overlap-group-container">
+                <div class="overlap-group1">
+                  <div class="rectangle-8 rectangle"></div>
+                  <img
+                    class="x01-dry-gynostemma-pe"
+                    src="public/homeimg/01-dry-gynostemma-pentaphyllum-leaf-isolated-white-blackground-j.png"
+                    alt="01-dry-gynostemma-pentaphyllum-leaf-isolated-white-blackground-jiaogulan-miracle-grass-chinese-herbal-tea-top-view 1"
+                  />
+                </div>
+                <div class="overlap-group5">
+                  <div class="rectangle-12 rectangle"></div>
+                  <div class="rectangle-13 rectangle"></div>
+                  <img
+                    class="x03-top-view-powder-g"
+                    src="public/homeimg/03-top-view-powder-green-tea-green-tea-leaf-isolated-white-backg.png"
+                    alt="03-top-view-powder-green-tea-green-tea-leaf-isolated-white-background 1"
+                  />
+                  <img
+                    class="x02-dry-oolong-tea-le"
+                    src="public/homeimg/02-dry-oolong-tea-leaves-isolated-white-background-1.png"
+                    alt="02-dry-oolong-tea-leaves-isolated-white-background 1"
+                  />
+                </div>
+              </div>
+              <div class="flex-row-2 roboto-normal-mine-shaft-20px">
+                <div class="gynostemma-tea">Gynostemma Tea</div>
+                <div class="oolong-tea">Oolong Tea</div>
+                <div class="surname">Green Tea</div>
+              </div>
+              <p class="sometimes-all-you-n x02-headline">
+                “sometimes All You Need Is A Good Cup Of Tea”
+              </p>
+              <div class="overlap-group-container-1">
+                <div class="overlap-group4">
+                  <img
+                    class="bag-fill-frame"
+                    src="public/homeimg/bag-fill-frame@2x.png"
+                    alt="bag-fill-frame"
+                  />
+                  <p class="x100-organic-et-male smalltittle">
+                    <span class="span smalltittle">
+                      100% Organic
+                      <br />
+                    </span>
+                    <span class="span-1 text">
+                      Et malesuada fames ac turpis egestas maecenas pharetra
+                      convallis met nisl purus.
+                      <br />
+                    </span>
+                    <span class="span-2 roboto-normal-mine-shaft-20px">
+                      <br />
+                    </span>
+                    <span class="span smalltittle">
+                      High Quality
+                      <br />
+                    </span>
+                    <span class="span-1 text">
+                      Et malesuada fames ac turpis egestas maecenas pharetra
+                      convallis met nisl purus.
+                      <br />
+                    </span>
+                    <span class="span-2 roboto-normal-mine-shaft-20px">
+                      <br />
+                    </span>
+                    <span class="span smalltittle">
+                      Always Fresh
+                      <br />
+                    </span>
+                    <span class="span-1 text">
+                      Et malesuada fames ac turpis egestas maecenas pharetra
+                      convallis met nisl purus.
+                    </span>
+                  </p>
+                </div>
+                <div class="overlap-group">
+                  <img
+                    class="bag-fill-frame-1 bag-fill-frame-3"
+                    src="public/homeimg/bag-fill-frame@2x.png"
+                    alt="bag-fill-frame"
+                  />
+                  <img
+                    class="rectangle-31 rectangle"
+                    src="public/homeimg/rectangle-31-1.png"
+                    alt="Rectangle 31"
+                  />
+                </div>
+              </div>
+              <img
+                class="bag-fill-frame-2 bag-fill-frame-3"
+                src="public/homeimg/bag-fill-frame-2@2x.png"
+                alt="bag-fill-frame"
+              />
+              <div class="flex-row-3">
+                <img
+                  class="x03-2"
+                  src="public/homeimg/bag-fill-frame-2@2x.png"
+                  alt="03 2"
+                />
+                <img class="x06-2" src="img/06-1.png" alt="06 2" />
+                <img class="x03-5" src="img/03-1.png" alt="03 5" />
+              </div>
+              <img class="x03-4" src="img/03-1.png" alt="03 4" />
+              <img class="x04-1" src="img/mask-group-2.png" alt="04 1" />
+            </div>
+            <div class="overlap-group3">
+              <img class="x06-1" src="img/06-1.png" alt="06 1" />
+              <img class="x03-3" src="img/03-1.png" alt="03 3" />
+            </div>
+          </div>
         </div>
+      </div>
     </main>
   );
 };

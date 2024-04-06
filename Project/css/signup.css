@@ -1,0 +1,180 @@
+/* screen - signup */
+body,html{
+    width:100%;
+  }
+  main{
+    width:100%;
+    background-color: #acc33e!important;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+ }
+ .bg-teal-100 {
+    background-color: transparent !important;
+  }
+
+  .p-3 {
+    padding: 0rem !important;
+}
+.signup {
+    align-items: flex-start;
+    background-color: #acc33e;
+    display: flex;
+    height: 100vh;
+    padding-left: 0; /* Adjust as needed */
+  padding-right: 0; /* Set the same padding right */
+  justify-content: center; 
+    width: 100%;
+    
+  }
+  
+  .signup .content {
+    align-items: center;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    height: 636px;
+    margin-top: 57px;
+    padding: 77px 61.1px;
+    width: 575px;
+  }
+  
+  .signup .greentrans-1 {
+    align-self: flex-end;
+    height: 82px;
+    margin-right: 8.88px;
+    margin-top: 14px;
+    object-fit: cover;
+    width: 193px;
+  }
+  
+  .signup .full-name_-input {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-left: 2.0px;
+    margin-top: 3px;
+    min-height: 68px;
+    width: 427px;
+  }
+  
+  .signup .full-name {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-left: 1.03px;
+    min-height: 21px;
+    width: 82px;
+  }
+  
+  .signup .overlap-group {
+    align-items: flex-start;
+    background-color: #eef0f2;
+    display: flex;
+    height: 45px;
+    min-width: 425px;
+    padding: 11.7px 20.5px;
+  }
+  
+  .signup .name {
+    color: #828282;
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 21px;
+    width: 80px;
+  }
+  .enter-your-email-here {
+    color: #828282;
+    font-family: var(--font-family-poppins);
+    font-size: var(--font-size-s);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 21px;
+    width: 154px;
+  }
+  .enter-your-password {
+    color: #828282;
+    font-family: var(--font-family-poppins);
+    font-size: var(--font-size-s);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 21px;
+    width: 154px;
+  }
+  
+  .signup ._-input {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-left: 2.0px;
+    margin-top: 25px;
+    min-height: 68px;
+    width: 427px;
+  }
+  
+  .signup .btn_-create-account {
+    align-items: center;
+    background-color: #1e312a;
+    display: flex;
+    gap: 10px;
+    height: 41px;
+    justify-content: center;
+    margin-left: 1.0px;
+    margin-top: 51px;
+    position: relative;
+    width: 424px;
+
+    padding: 10px 20px; /* Adjust padding as needed */
+  border-radius: 5px; /* Add border-radius for rounded corners */
+  cursor: pointer;
+  }
+  
+  .signup .sign-up {
+    color: #ffffff;
+    font-family: var(--font-family-poppins);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .signup .have-an-account {
+    align-self: center;
+    color: transparent;
+    font-family: var(--font-family-poppins);
+    font-size: var(--font-size-s);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: 18px;
+    min-height: 19px;
+    width: 238px;
+  }
+  
+  .signup .chris-lee-70l1t-dai6r-m-unsplash-1 {
+    height: 636px;
+    margin-top: 57px;
+    object-fit: cover;
+    width: 513px;
+  }
+
+  .span0 {
+    color: #4d5959;
+  }
+  
+  .span1 {
+    color: var(--black);
+  }
+  
+  .span2 {
+    color: #acc33e;
+    font-weight: 500;
+  }
+  

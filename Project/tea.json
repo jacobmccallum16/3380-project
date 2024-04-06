@@ -44,7 +44,7 @@
 		"type": "Black Tea",
 		"description": "Indulge in the creamy richness of Earl Grey Cream Tea. This twist on the classic Earl Grey blend features bergamot-infused black tea with a hint of vanilla for a luxurious taste experience.",
 		"origin": "Various",
-		"harvestSeason": null,
+		"harvest_season": "Summer",
 		"price": 21.99,
 		"quantity": 70,
 		"image": "https://example.com/earl_grey_cream_tea.jpg"
@@ -74,7 +74,7 @@
 		"type": "Herbal Tea",
 		"description": "Relax and unwind with Lavender Chamomile Herbal Tea. This soothing blend combines fragrant lavender flowers with chamomile for a calming and aromatic infusion.",
 		"origin": "Various",
-		"harvestSeason": null,
+		"harvest_season": "Summer",
 		"price": 18.75,
 		"quantity": 85,
 		"image": "https://m.media-amazon.com/images/I/81S9XOR4hNL.__AC_SX300_SY300_QL70_ML2_.jpg"
@@ -94,9 +94,109 @@
 		"type": "Rooibos Tea",
 		"description": "Indulge in the warming spices and creamy vanilla flavor of Rooibos Vanilla Chai. This caffeine-free blend combines rooibos with cinnamon, ginger, cardamom, and cloves for a comforting treat.",
 		"origin": "South Africa",
-		"harvestSeason": null,
+		"harvest_season": "Summer",
 		"price": 20.49,
 		"quantity": 65,
 		"image": "https://m.media-amazon.com/images/I/81Xf0DEZ6KL._AC_SL1500_.jpg"
+	},
+	{
+		"title": "Imperial Tie Guan Yin Oolong Tea",
+		"type": "Oolong Tea",
+		"description": "Experience the floral aroma and creamy texture of Imperial Tie Guan Yin Oolong Tea, a premium variety known for its orchid-like fragrance.",
+		"origin": "Anxi County, Fujian Province, China",
+		"harvest_season": "Spring",
+		"price": 45.99,
+		"quantity": 35,
+		"image": "https://m.media-amazon.com/images/I/71gsf8SnRjL._AC_SL1500_.jpg"
+	},
+	{
+		"title": "Kenyan Purple Tea",
+		"type": "Purple Tea",
+		"description": "Discover the unique flavor and vibrant hue of Kenyan Purple Tea, rich in antioxidants and boasting a fruity taste with floral undertones.",
+		"origin": "Kenya",
+		"harvest_season": "Summer",
+		"price": 27.5,
+		"quantity": 55,
+		"image": "https://m.media-amazon.com/images/I/61pHPKoRC6L._AC_SL1500_.jpg"
+	},
+	{
+		"title": "Yunnan Green Needle Tea",
+		"type": "Green Tea",
+		"description": "Delight in the delicate and grassy flavor of Yunnan Green Needle Tea, characterized by its slender, needle-like leaves and fresh taste.",
+		"origin": "Yunnan Province, China",
+		"harvest_season": "Spring",
+		"price": 31.99,
+		"quantity": 45,
+		"image": "https://i.ebayimg.com/images/g/U9UAAOSwqpVkaxMH/s-l1600.png"
+	},
+	{
+		"title": "Tess Sunrise Black Tea",
+		"type": "Black Tea",
+		"description": "Awaken your senses with the brisk and citrusy flavor of Tess Sunrise Black Tea, sourced from the lush tea gardens of Sri Lanka.",
+		"origin": "Sri Lanka (Tess)",
+		"harvest_season": "Spring",
+		"price": 22.99,
+		"quantity": 60,
+		"image": "https://i.ebayimg.com/images/g/91IAAOSwv-xlHcRG/s-l1600.jpg"
+	},
+	{
+		"title": "Imperial Himalayan White Tea",
+		"type": "White Tea",
+		"description": "Embrace the purity and tranquility of Imperial Himalayan White Tea, handcrafted from young tea buds and offering a delicate, floral aroma.",
+		"origin": "Himalayan Region",
+		"harvest_season": "Spring",
+		"price": 37.99,
+		"quantity": 40,
+		"image": "https://m.media-amazon.com/images/I/61Zx6q6VtkL._AC_SL1500_.jpg"
+	},
+	{
+		"title": "Jasmine Dragon Pearls Green Tea",
+		"type": "Green Tea",
+		"description": "Savor the exquisite aroma and smooth taste of Jasmine Dragon Pearls Green Tea, skillfully hand-rolled and infused with fresh jasmine blossoms.",
+		"origin": "Fujian Province, China",
+		"harvest_season": "Spring",
+		"price": 38.75,
+		"quantity": 50,
+		"image": "https://m.media-amazon.com/images/I/51KMByFauXL._AC_.jpg"
+	},
+	{
+		"title": "Assam Gold Tips Black Tea",
+		"type": "Black Tea",
+		"description": "Indulge in the luxurious and malty flavor of Assam Gold Tips Black Tea, crafted from golden-tipped tea leaves grown in the fertile plains of Assam, India.",
+		"origin": "Assam, India",
+		"harvest_season": "Summer",
+		"price": 29.99,
+		"quantity": 70,
+		"image": "https://www.theteashelf.com/cdn/shop/products/1MOCKUP-01.jpg?v=1598794199"
+	},
+	{
+		"title": "Milk Oolong Tea",
+		"type": "Oolong Tea",
+		"description": "Experience the creamy texture and sweet aroma of Milk Oolong Tea, known for its unique production process that imparts a milky flavor to the leaves.",
+		"origin": "Various",
+		"harvest_season": "Summer",
+		"price": 34.99,
+		"quantity": 55,
+		"image": "https://m.media-amazon.com/images/I/61ZViA0lKdL._AC_SL1001_.jpg"
+	},
+	{
+		"title": "Moroccan Mint Herbal Tea",
+		"type": "Herbal Tea",
+		"description": "Refresh your senses with the invigorating blend of Moroccan Mint Herbal Tea, combining peppermint leaves with green tea for a revitalizing infusion.",
+		"origin": "Various",
+		"harvest_season": "Summer",
+		"price": 19.99,
+		"quantity": 75,
+		"image": "https://m.media-amazon.com/images/I/71x2s2VGDKL._AC_SL1500_.jpg"
+	},
+	{
+		"title": "Darjeeling Second Flush Tea",
+		"type": "Black Tea",
+		"description": "Enjoy the bold flavor and muscatel notes of Darjeeling Second Flush Tea, harvested during the second flush for a more robust and flavorful brew.",
+		"origin": "Darjeeling, India",
+		"harvest_season": "Summer",
+		"price": 32.5,
+		"quantity": 65,
+		"image": "https://m.media-amazon.com/images/I/71aqklDGQTL._AC_SL1500_.jpg"
 	}
 ]

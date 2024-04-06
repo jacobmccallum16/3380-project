@@ -10,7 +10,8 @@ body,html{
 
   header{
     width:100%;
-    background-color: #EBEBEB;
+    background-color: #FFFDF7;
+    
   }
   .bgimg{
     width:100%;
@@ -21,12 +22,17 @@ body,html{
     background-color: #FFFDF7;
   }
 
+  .navbar {
+    border-bottom: 0.1px solid black;
+  }
   .container-fluid{
     width:100%;
-    background-color: #EBEBEB;
+    background-color: #FFFDF7;
   }
   .navbar-nav a {
     color:#1e312a;
+    font-family: "Philosopher-Bold", Helvetica;
+    
   }
   
   .nav-link:hover{
@@ -50,590 +56,505 @@ body,html{
   /* screen - tea */
 
 .tea {
-    align-items: center;
-    background-color: #fffbf8;
-    display: flex;
-    flex-direction: column;
-    height: 2679px;
-    overflow: hidden;
-    width: 100%;
-  }
-  
-  .tea .flex-col {
-    flex-direction: column;
-    margin-right: 36.0px;
-    margin-top: 104px;
-    min-height: 911px;
-    width: 972px;
-  }
-  
-  .tea .overlap-group6 {
-    height: 590px;
-    position: relative;
-    width: 573px;
-  }
-  
-  .tea .overlap-group3 {
-    height: 590px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 551px;
-  }
-  
-  .tea .x03-1 {
-    height: 410px;
-    left: 0;
-    object-fit: cover;
-    position: absolute;
-    top: 180px;
-    width: 280px;
-  }
-  
-  .tea .frame-2 {
-    align-items: flex-start;
-    display: flex;
-    gap: 28px;
-    height: 426px;
-    justify-content: flex-end;
-    left: 61px;
-    min-width: 490px;
-    position: absolute;
-    top: 0;
-  }
-  
-  .tea .ellipse-24 {
-    height: 381px;
-    margin-top: 8px;
-    width: 388px;
-  }
-  
-  .tea .flex-col-1 {
-    align-self: flex-end;
-    margin-bottom: -85px;
-    min-height: 454px;
-    width: 507px;
-  }
-  
-  .tea .advantages {
-    color: var(--brown);
-    font-weight: 400;
-    line-height: normal;
-    min-height: 25px;
-    width: 125px;
-  }
-  
-  .tea .the-hidden-health-benefits-of-tea {
-    color: var(--greentea);
-    font-weight: 700;
-    line-height: normal;
-    margin-top: 29px;
-    width: 390px;
-  }
-  
-  .tea .lorem-ipsum-dolor-si {
-    color: var(--text);
-    font-weight: 300;
-    line-height: 30px;
-    min-height: 239px;
-    width: 507px;
-  }
-  
-  .tea .since-2022 {
-    color: var(--brown);
-    font-weight: 400;
-    left: 431px;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 554px;
-    white-space: nowrap;
-  }
-  
-  .tea .why-choose-us {
-    align-self: center;
-    color: var(--greentea);
-    font-weight: 700;
-    line-height: normal;
-    margin-left: 63.0px;
-    margin-top: 14px;
-    min-height: 56px;
-    text-align: center;
-    width: 525px;
-  }
-  
-  .tea .lorem-ipsum-dolor-si-1 {
-    align-self: flex-end;
-    color: var(--text);
-    font-weight: 300;
-    line-height: 30px;
-    margin-top: 30px;
-    min-height: 221px;
-    text-align: center;
-    width: 908px;
-  }
-  
-  .tea .asset-container {
-    align-items: flex-start;
-    display: flex;
-    gap: 280px;
-    margin-left: 54.0px;
-    margin-top: 26px;
-    min-width: 814px;
-  }
+  align-items: center;
+  background-color: #fffbf8;
+  display: flex;
+  flex-direction: column;
+  height: 2679px;
+  overflow: hidden;
+  width: 1280px;
+}
 
-  .text-container{
-    align-items: flex-start;
-    display: flex;
-    font-size:x-large;
-    gap: 9%;
-    margin-top: 26px;
-    min-width: 814px;
-  }
-  .tea .organic-products {
-    color: var(--greentea);
-    font-weight: 700;
-    line-height: normal;
-    min-height: 25px;
-    text-align: center;
-    white-space: nowrap;
-    width: 237px;
-  }
-  
-  .tea .great-customer-service {
-    color: var(--greentea);
-    font-weight: 700;
-    line-height: normal;
-    margin-left: 10%;
-    min-height: 25px;
-    text-align: center;
-    white-space: nowrap;
-    width: 307px;
-  }
-  
-  .tea .natural-ingredients {
-    color: var(--greentea);
-    font-weight: 700;
-    line-height: normal;
-    margin-left: 10%;
-    min-height: 51px;
-    text-align: center;
-    width: 237px;
-  }
-  
-  .tea .asset {
-    height: 85px;
-    object-fit: cover;
-    width: 84px;
-  }
-  
-  .tea .asset-44x {
-    height: 85px;
-    object-fit: cover;
-    width: 86px;
-  }
-  
-  .tea .flex-row {
-    align-self: flex-start;
-    gap: 685px;
-    height: 9590px;
-    margin-left: -4002px;
-    margin-top: 38px;
-    min-width: 6214px;
-  }
-  
-  .tea .flex-col-2 {
-    align-self: flex-end;
-    min-height: 4490px;
-    width: 597px;
-  }
-  
-  .tea .flex-col-3 {
-    min-height: 8979px;
-    width: 4932px;
-  }
-  
-  .tea .flex-row-1 {
-    align-items: flex-start;
-    align-self: flex-end;
-    display: flex;
-    gap: 1708px;
-    height: 6615px;
-    min-width: 4633px;
-  }
-  
-  .tea .mask-group-2 {
-    align-self: flex-end;
-    height: 580px;
-    width: 583px;
-  }
-  
-  .tea .flex-col-4 {
-    min-height: 6322px;
-    width: 2342px;
-  }
-  
-  .tea .flex-row-2 {
-    align-items: flex-start;
-    display: flex;
-    /* height: 51px; */ /* Remove or adjust height */
-    margin-left: 2%; /* Adjust margin for better spacing */
-    /* min-width: 966px; */ /* Remove or adjust min-width */
-    width: 80%; /* Set width to a percentage for responsiveness */
-  }
-  
-  
-  
+.tea .flex-col {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-right: 36.0px;
+  margin-top: 104px;
+  min-height: 911px;
+  width: 972px;
+}
 
+.tea .overlap-group6 {
+  height: 590px;
+  position: relative;
+  width: 573px;
+}
 
-  .tea .frame-container {
-    
-    height: 1493px;
-    margin-left: 6%;
-    margin-top: 400px;
-    position: relative;
-    width: 100%;
-  }
-  
-  .tea .frame-4 {
-    align-items: flex-start;
-    display: flex;
-    height: 1023px;
-    left: 0;
-    min-width: 1659px;
-    position: absolute;
-    top: 0;
-  }
-  
-  .tea .bag-fill-frame-1 {
-    align-self: flex-end;
-    height: 21px;
-    margin-bottom: -1038px;
-    margin-left: -2631px;
-    width: 18px;
-  }
-  
-  .tea .arrow-container {
-    align-items: flex-start;
-    align-self: flex-end;
-    display: flex;
-    gap: 6px;
-    margin-bottom: -334px;
-    margin-left: 242px;
-    min-width: 40px;
-  }
-  
-  .tea .arrow {
-    height: 20px;
-    width: 17px;
-  }
-  
-  .tea .flex-col-5 {
-    margin-left: 2354px;
-    margin-top: -267px;
-    min-height: 1021px;
-    width: 1158px;
-  }
-  
-  .tea .flex-col-6 {
-    gap: 82px;
-    min-height: 511px;
-    width: 1158px;
-  }
-  
-  .tea .our-unique-tea-blends {
-    color: var(--greentea);
-    font-weight: 700;
-    line-height: normal;
-    min-height: 56px;
-    width: 525px;
-  }
-  
-  .tea .overlap-group-container {
-    align-items: flex-start;
-    align-self: flex-end;
-    display: flex;
-    gap: 23px;
-    min-width: 1056px;
-  }
-  
-  .tea .overlap-group1 {
-    height: 373px;
-    position: relative;
-    width: 317px;
-  }
-  
-  .tea .rectangle-8 {
-    background-color: var(--cararra);
-    border-radius: 40px;
-    height: 373px;
-    left: 108px;
-    position: absolute;
-    top: 0;
-    width: 209px;
-  }
-  
-  .tea .x01-dry-gynostemma-pe {
-    height: 189px;
-    left: 0;
-    object-fit: cover;
-    position: absolute;
-    top: 83px;
-    width: 200px;
-  }
-  
-  .tea .overlap-group {
-    height: 373px;
-    position: relative;
-    width: 716px;
-  }
-  
-  .tea .rectangle-12 {
-    background-color: var(--cararra);
-    border-radius: 40px;
-    height: 373px;
-    left: 131px;
-    position: absolute;
-    top: 0;
-    width: 209px;
-  }
-  
-  .tea .rectangle-13 {
-    background-color: var(--cararra);
-    border-radius: 40px;
-    height: 373px;
-    left: 490px;
-    position: absolute;
-    top: 0;
-    width: 209px;
-  }
-  
-  .tea .x03-top-view-powder-g {
-    height: 331px;
-    left: 244px;
-    object-fit: cover;
-    position: absolute;
-    top: 13px;
-    width: 472px;
-  }
-  
-  .tea .x02-dry-oolong-tea-le {
-    height: 241px;
-    left: 0;
-    object-fit: cover;
-    position: absolute;
-    top: 58px;
-    width: 262px;
-  }
-  
-  .tea .flex-row-3 {
-    align-items: flex-end;
-    display: flex;
-    height: 28px;
-    margin-left: 46px;
-    margin-top: 14px;
-    min-width: 904px;
-  }
-  
-  .tea .gynostemma-tea {
-    letter-spacing: 0;
-    line-height: normal;
-    min-height: 23px;
-    min-width: 157px;
-    white-space: nowrap;
-  }
-  
-  .tea .oolong-tea {
-    letter-spacing: 0;
-    line-height: normal;
-    margin-left: 284px;
-    min-height: 23px;
-    min-width: 101px;
-    white-space: nowrap;
-  }
-  
-  .tea .surname {
-    align-self: flex-start;
-    letter-spacing: 0;
-    line-height: normal;
-    margin-left: 272px;
-    min-height: 23px;
-    white-space: nowrap;
-  }
-  
-  .tea .bag-fill-frame-container {
-    align-items: flex-start;
-    align-self: center;
-    display: flex;
-    gap: 469px;
-    margin-left: 191.0px;
-    margin-top: 447px;
-    min-width: 505px;
-  }
-  
-  .tea .bag-fill-frame {
-    height: 21px;
-    width: 18px;
-  }
-  
-  .tea .rectangle-11 {
-    background-color: var(--cararra);
-    border-radius: 40px;
-    height: 602px;
-    margin-left: 280px;
-    margin-top: 101px;
-    width: 463px;
-  }
-  
-  .tea .frame-6 {
-    align-items: flex-end;
-    display: flex;
-    flex-direction: column;
-    gap: 95px;
-    left: 6px;
-    min-height: 712px;
-    position: absolute;
-    top: 781px;
-    width: 818px;
-  }
-  
-  .tea .sometimes-all-you-n {
-    color: var(--greentea);
-    font-weight: 700;
-    line-height: normal;
-    margin-right: -97px;
-    margin-top: -352px;
-    min-height: 112px;
-    text-align: center;
-    width: 715px;
-  }
-  
-  .tea .flex-row-4 {
-    align-items: flex-start;
-    display: flex;
-    gap: 49px;
-    height: 346px;
-    margin-right: -262px;
-    min-width: 1126px;
-  }
-  
-  .tea .x100-organic-et-male {
-    align-self: flex-end;
-    color: transparent;
-    font-weight: 400;
-    line-height: 30px;
-    min-height: 344px;
-    text-align: right;
-    width: 555px;
-  }
-  
-  .tea .span {
-    color: var(--greentea);
-    font-weight: 700;
-  }
-  
-  .tea .span-1 {
-    color: var(--text);
-    font-weight: 300;
-  }
-  
-  .tea .span-2 {
-    letter-spacing: 0;
-  }
-  
-  .tea .rectangle-31 {
-    height: 338px;
-    width: 522px;
-  }
-  
-  .tea .overlap-group5 {
-    align-self: flex-end;
-    height: 630px;
-    margin-top: 1174px;
-    position: relative;
-    width: 686px;
-  }
-  
-  .tea .x06-1 {
-    height: 476px;
-    left: 184px;
-    object-fit: cover;
-    position: absolute;
-    top: 78px;
-    width: 483px;
-  }
-  
-  .tea .x03-3 {
-    height: 630px;
-    left: 0;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    width: 686px;
-  }
-  
-  .tea .x03-5 {
-    align-self: center;
-    height: 468px;
-    margin-left: 223.0px;
-    margin-top: 900px;
-    object-fit: cover;
-    width: 559px;
-  }
-  
-  .tea .x06-2 {
-    height: 552px;
-    margin-left: 110px;
-    margin-top: 36px;
-    object-fit: cover;
-    width: 558px;
-  }
-  
-  .tea .x03-4 {
-    height: 559px;
-    margin-top: 54px;
-    object-fit: cover;
-    width: 608px;
-  }
-  
-  .tea .overlap-group4 {
-    height: 585px;
-    margin-left: 27.37px;
-    margin-top: 622px;
-    position: relative;
-    width: 835px;
-  }
-  
-  .tea .x04-1 {
-    height: 585px;
-    left: 0;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    width: 552px;
-  }
-  
-  .tea .mask-group-4 {
-    height: 367px;
-    left: 550px;
-    position: absolute;
-    top: 185px;
-    width: 285px;
-  }
-  
-  .tea .flex {
-    align-items: flex-start;
-    display: flex;
-  }
-  
-  .tea .flex-col-7 {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-  }
-  
+.tea .overlap-group2 {
+  height: 590px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 551px;
+}
+
+.tea .x03-1 {
+  height: 410px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 180px;
+  width: 280px;
+}
+
+.tea .frame-2 {
+  align-items: flex-start;
+  display: flex;
+  gap: 28px;
+  height: 426px;
+  justify-content: flex-end;
+  left: 61px;
+  min-width: 490px;
+  position: absolute;
+  top: 0;
+}
+
+.tea .ellipse-24 {
+  height: 381px;
+  margin-top: 8px;
+  width: 388px;
+}
+
+.tea .flex-col-1 {
+  align-items: flex-start;
+  align-self: flex-end;
+  margin-bottom: -85px;
+  min-height: 454px;
+  width: 507px;
+}
+
+.tea .advantages {
+  color: var(--brown);
+  font-weight: 400;
+  line-height: normal;
+  min-height: 25px;
+  width: 125px;
+}
+
+.tea .the-hidden-health-benefits-of-tea {
+  color: var(--greentea);
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 29px;
+  min-height: 161px;
+  width: 390px;
+}
+
+.tea .lorem-ipsum-dolor-si {
+  color: var(--text);
+  font-weight: 300;
+  line-height: 30px;
+  min-height: 239px;
+  width: 507px;
+}
+
+.tea .since-2022 {
+  color: var(--brown);
+  font-weight: 400;
+  left: 431px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 554px;
+  white-space: nowrap;
+}
+
+.tea .why-choose-us {
+  align-self: center;
+  color: var(--greentea);
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 63.0px;
+  margin-top: 14px;
+  min-height: 56px;
+  text-align: center;
+  width: 525px;
+}
+
+.tea .lorem-ipsum-dolor-si-1 {
+  align-self: flex-end;
+  color: var(--text);
+  font-weight: 300;
+  line-height: 30px;
+  margin-top: 30px;
+  min-height: 221px;
+  text-align: center;
+  width: 908px;
+}
+
+.tea .asset-container {
+  align-items: flex-start;
+  display: flex;
+  gap: 280px;
+  margin-left: 54.0px;
+  margin-top: 26px;
+  min-width: 814px;
+}
+
+.tea .asset {
+  height: 85px;
+  object-fit: cover;
+  width: 84px;
+}
+
+.tea .asset-44x {
+  height: 85px;
+  object-fit: cover;
+  width: 86px;
+}
+
+.tea .flex-row {
+  align-items: center;
+  align-self: flex-start;
+  display: flex;
+  gap: 94px;
+  height: 8979px;
+  margin-left: -3936.49px;
+  margin-top: 38px;
+  min-width: 6148px;
+}
+
+.tea .flex-col-2 {
+  align-items: flex-end;
+  min-height: 8979px;
+  width: 5368px;
+}
+
+.tea .flex-row-1 {
+  align-items: flex-start;
+  display: flex;
+  height: 51px;
+  margin-right: 282.0px;
+  min-width: 966px;
+}
+
+.tea .organic-products {
+  color: var(--greentea);
+  font-weight: 700;
+  line-height: normal;
+  min-height: 25px;
+  text-align: center;
+  white-space: nowrap;
+  width: 237px;
+}
+
+.tea .great-customer-service {
+  color: var(--greentea);
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 93px;
+  min-height: 25px;
+  text-align: center;
+  white-space: nowrap;
+  width: 307px;
+}
+
+.tea .natural-ingredients {
+  color: var(--greentea);
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 92px;
+  min-height: 51px;
+  text-align: center;
+  width: 237px;
+}
+
+.tea .our-unique-tea-blends {
+  color: var(--greentea);
+  font-weight: 700;
+  line-height: normal;
+  margin-right: 785.0px;
+  margin-top: 138px;
+  min-height: 56px;
+  width: 525px;
+}
+
+.tea .overlap-group-container {
+  align-items: flex-start;
+  display: flex;
+  gap: 23px;
+  margin-right: 226.0px;
+  margin-top: 82px;
+  min-width: 1056px;
+}
+
+.tea .overlap-group1 {
+  height: 373px;
+  position: relative;
+  width: 317px;
+}
+
+.tea .rectangle-8 {
+  background-color: var(--cararra);
+  border-radius: 40px;
+  height: 373px;
+  left: 108px;
+  width: 209px;
+}
+
+.tea .x01-dry-gynostemma-pe {
+  height: 189px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 83px;
+  width: 200px;
+}
+
+.tea .overlap-group5 {
+  height: 373px;
+  position: relative;
+  width: 716px;
+}
+
+.tea .rectangle-12 {
+  background-color: var(--cararra);
+  border-radius: 40px;
+  height: 373px;
+  left: 131px;
+  width: 209px;
+}
+
+.tea .rectangle-13 {
+  background-color: var(--cararra);
+  border-radius: 40px;
+  height: 373px;
+  left: 490px;
+  width: 209px;
+}
+
+.tea .x03-top-view-powder-g {
+  height: 331px;
+  left: 244px;
+  object-fit: cover;
+  position: absolute;
+  top: 13px;
+  width: 472px;
+}
+
+.tea .x02-dry-oolong-tea-le {
+  height: 241px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 58px;
+  width: 262px;
+}
+
+.tea .flex-row-2 {
+  align-items: flex-end;
+  display: flex;
+  height: 28px;
+  margin-right: 434.0px;
+  margin-top: 14px;
+  min-width: 904px;
+}
+
+.tea .gynostemma-tea {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 23px;
+  min-width: 157px;
+  white-space: nowrap;
+}
+
+.tea .oolong-tea {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: 284px;
+  min-height: 23px;
+  min-width: 101px;
+  white-space: nowrap;
+}
+
+.tea .surname {
+  align-self: flex-start;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: 272px;
+  min-height: 23px;
+  white-space: nowrap;
+}
+
+.tea .sometimes-all-you-n {
+  color: var(--greentea);
+  font-weight: 700;
+  line-height: normal;
+  margin-right: 412.0px;
+  margin-top: 143px;
+  min-height: 112px;
+  text-align: center;
+  width: 715px;
+}
+
+.tea .overlap-group-container-1 {
+  align-items: flex-start;
+  display: flex;
+  gap: 49px;
+  height: 346px;
+  margin-right: 247.0px;
+  margin-top: 95px;
+  min-width: 1126px;
+}
+
+.tea .overlap-group4 {
+  align-self: flex-end;
+  height: 344px;
+  position: relative;
+  width: 555px;
+}
+
+.tea .bag-fill-frame {
+  height: 21px;
+  left: 485px;
+  position: absolute;
+  top: 95px;
+  width: 18px;
+}
+
+.tea .x100-organic-et-male {
+  color: transparent;
+  font-weight: 400;
+  left: 0;
+  line-height: 30px;
+  position: absolute;
+  text-align: right;
+  top: 0;
+  width: 555px;
+}
+
+.tea .span {
+  color: var(--greentea);
+  font-weight: 700;
+}
+
+.tea .span-1 {
+  color: var(--text);
+  font-weight: 300;
+}
+
+.tea .span-2 {
+  letter-spacing: 0;
+}
+
+.tea .overlap-group {
+  height: 338px;
+  position: relative;
+  width: 522px;
+}
+
+.tea .bag-fill-frame-1 {
+  left: 368px;
+  position: absolute;
+  top: 97px;
+}
+
+.tea .rectangle-31 {
+  height: 338px;
+  left: 0;
+  width: 522px;
+}
+
+.tea .bag-fill-frame-2 {
+  align-self: center;
+  margin-right: 2471.51px;
+  margin-top: 2678px;
+}
+
+.tea .flex-row-3 {
+  align-items: flex-start;
+  display: flex;
+  height: 1056px;
+  margin-top: 516px;
+  min-width: 5368px;
+}
+
+.tea .x03-2 {
+  align-self: center;
+  height: 429px;
+  margin-top: 267.0px;
+  object-fit: cover;
+  width: 467px;
+}
+
+.tea .x06-2 {
+  align-self: flex-end;
+  height: 552px;
+  margin-left: 3449px;
+  object-fit: cover;
+  width: 558px;
+}
+
+.tea .x03-5 {
+  height: 468px;
+  margin-left: 335px;
+  object-fit: cover;
+  width: 559px;
+}
+
+.tea .x03-4 {
+  height: 559px;
+  margin-right: 954.0px;
+  margin-top: 54px;
+  object-fit: cover;
+  width: 608px;
+}
+
+.tea .x04-1 {
+  align-self: flex-start;
+  height: 585px;
+  margin-left: 1179.49px;
+  margin-top: 2071px;
+  object-fit: cover;
+  width: 552px;
+}
+
+.tea .overlap-group3 {
+  height: 630px;
+  margin-bottom: 2102.69px;
+  position: relative;
+  width: 686px;
+}
+
+.tea .x06-1 {
+  height: 476px;
+  left: 184px;
+  object-fit: cover;
+  position: absolute;
+  top: 78px;
+  width: 483px;
+}
+
+.tea .x03-3 {
+  height: 630px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 686px;
+}
+
+.tea .bag-fill-frame-3 {
+  height: 21px;
+  width: 18px;
+}
+
+.tea .flex-col-3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.tea .rectangle {
+  position: absolute;
+  top: 0;
+}
 
 
+
+  
+
+  /* footer */
   .frame {
   background-color: transparent;
   display: flex;
