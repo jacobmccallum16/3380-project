@@ -1,0 +1,262 @@
+[
+	{
+		"title": "The Pragmatic Programmer: 20th Anniversary Edition, 2nd Edition: Your Journey to Mastery",
+		"author": "Andrew Hunt, David Thomas",
+		"genre": "Programming",
+		"publication_year": 2019,
+		"price": 49.99,
+		"description": "This updated edition of the classic book offers timeless advice and new insights for today's software developers. It covers a wide range of topics including software development principles, tools, and techniques.",
+		"quantity": 50,
+		"image": "https://m.media-amazon.com/images/I/71f743sOPoL._SL1500_.jpg"
+	},
+	{
+		"title": "Python Crash Course, 2nd Edition: A Hands-On, Project-Based Introduction to Programming",
+		"author": "Eric Matthes",
+		"genre": "Programming",
+		"publication_year": 2019,
+		"price": 25.99,
+		"description": "This updated edition of the popular book provides a practical and project-based introduction to Python programming. It covers basic programming concepts, Python syntax, and real-world projects to help readers quickly grasp Python development.",
+		"quantity": 60,
+		"image": "https://m.media-amazon.com/images/I/51JcFufVwGL._SY445_SX342_.jpg"
+	},
+	{
+		"title": "Cracking the Coding Interview: 189 Programming Questions and Solutions, 6th Edition",
+		"author": "Gayle Laakmann McDowell",
+		"genre": "Programming",
+		"publication_year": 2015,
+		"price": 39.9,
+		"description": "This bestselling book is a comprehensive guide to preparing for coding interviews at top tech companies. It includes 189 programming questions with detailed explanations and solutions, along with tips for tackling technical interviews.",
+		"quantity": 40,
+		"image": "https://m.media-amazon.com/images/I/61mIq2iJUXL._SL1360_.jpg"
+	},
+	{
+		"title": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems, 2nd Edition",
+		"author": "Aurélien Géron",
+		"genre": "Machine Learning",
+		"publication_year": 2019,
+		"price": 47.99,
+		"description": "This updated edition of the bestselling book offers practical guidance on building machine learning systems using Scikit-Learn, Keras, and TensorFlow. It covers a wide range of topics including supervised and unsupervised learning, neural networks, and deep learning.",
+		"quantity": 30,
+		"image": "https://m.media-amazon.com/images/I/519F+UHXZRL._SY445_SX342_.jpg"
+	},
+	{
+		"title": "Deep Learning",
+		"author": "Yoshua Bengio, Ian Goodfellow, Aaron Courville",
+		"genre": "Deep Learning",
+		"publication_year": 2016,
+		"price": 78.5,
+		"description": "This comprehensive textbook provides an in-depth introduction to deep learning. It covers fundamental concepts, advanced techniques, and practical applications of deep neural networks.",
+		"quantity": 25,
+		"image": "https://m.media-amazon.com/images/I/A1GbblX7rOL._SL1500_.jpg"
+	},
+	{
+		"title": "Hands-On Computer Vision with TensorFlow 2: Leverage deep learning to create powerful image processing apps with TensorFlow 2.0 and Keras",
+		"author": "Eliot Andres",
+		"genre": "Computer Vision",
+		"publication_year": 2019,
+		"price": 44.99,
+		"description": "This practical guide teaches you how to build computer vision applications using TensorFlow 2.0 and Keras. It covers techniques such as image classification, object detection, and image segmentation, with hands-on examples and projects.",
+		"quantity": 35,
+		"image": "https://m.media-amazon.com/images/I/61Tpe77uSLL._SL1360_.jpg"
+	},
+	{
+		"title": "The Midnight Library",
+		"author": "Matt Haig",
+		"genre": "Fiction",
+		"publication_year": 2020,
+		"price": 14.99,
+		"description": "A mesmerizing novel about regret, hope, and second chances, where a library between life and death offers patrons the opportunity to explore the lives they could have lived.",
+		"quantity": 50,
+		"image": "https://myweekendisbooked.com/cdn/shop/products/4my-weekend-is-bookedjpg_1024x1024.jpg?v=1619449670"
+	},
+	{
+		"title": "Where the Crawdads Sing",
+		"author": "Delia Owens",
+		"genre": "Fiction",
+		"publication_year": 2018,
+		"price": 12.5,
+		"description": "A gripping mystery and coming-of-age tale set in the marshlands of North Carolina, where the isolated 'Marsh Girl' becomes the prime suspect in a murder investigation.",
+		"quantity": 60,
+		"image": "https://m.media-amazon.com/images/M/MV5BMTJmNGJmYTgtYjAxNy00YmMzLTk2YTYtMGIzMmUwNDMyMTY1XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg"
+	},
+	{
+		"title": "The Four Winds",
+		"author": "Kristin Hannah",
+		"genre": "Historical Fiction",
+		"publication_year": 2021,
+		"price": 19.99,
+		"description": "Set during the Great Depression, this powerful novel follows a woman's journey as she leaves her drought-stricken farm in Texas in search of a better life for her family in California.",
+		"quantity": 40,
+		"image": "https://m.media-amazon.com/images/I/514hnJtIdIS._SY445_SX342_.jpg"
+	},
+	{
+		"title": "Klara and the Sun",
+		"author": "Kazuo Ishiguro",
+		"genre": "Science Fiction",
+		"publication_year": 2021,
+		"price": 17.99,
+		"description": "In a dystopian future, Klara, an artificial friend, observes the complexities of human behavior and longs to be chosen by a child as her companion.",
+		"quantity": 30,
+		"image": "https://upload.wikimedia.org/wikipedia/en/2/26/Klara_and_the_Sun_%28Kazuo_Ishiguro%29.png"
+	},
+	{
+		"title": "A Promised Land",
+		"author": "Barack Obama",
+		"genre": "Memoir",
+		"publication_year": 2020,
+		"price": 29.99,
+		"description": "The highly anticipated memoir of Barack Obama, the 44th President of the United States, covering his early political career, presidential campaign, and first term in office.",
+		"quantity": 25,
+		"image": "https://m.media-amazon.com/images/I/41ukihc+13L._SY445_SX342_.jpg"
+	},
+	{
+		"title": "The Silent Patient",
+		"author": "Alex Michaelides",
+		"genre": "Thriller",
+		"publication_year": 2019,
+		"price": 16.99,
+		"description": "A psychological thriller revolving around a woman who shoots her husband and then stops speaking, and the psychotherapist determined to uncover the truth behind her silence.",
+		"quantity": 70,
+		"image": "https://m.media-amazon.com/images/I/41j1-YNROeL._SY445_SX342_.jpg"
+	},
+	{
+		"title": "Becoming",
+		"author": "Michelle Obama",
+		"genre": "Memoir",
+		"publication_year": 2018,
+		"price": 18.5,
+		"description": "Michelle Obama's candid and inspiring memoir, chronicling her journey from her childhood in Chicago to her years as First Lady of the United States.",
+		"quantity": 45,
+		"image": "https://m.media-amazon.com/images/I/81cJTmFpG-L._AC_UF1000,1000_QL80_.jpg"
+	},
+	{
+		"title": "Anxious People",
+		"author": "Fredrik Backman",
+		"genre": "Fiction",
+		"publication_year": 2020,
+		"price": 21.25,
+		"description": "A humorous and heartwarming novel that explores the quirks of human nature, following a failed bank robbery turned hostage situation and the unlikely connections formed among the hostages.",
+		"quantity": 55,
+		"image": "https://m.media-amazon.com/images/I/81+NiUsL3qL._AC_UF1000,1000_QL80_.jpg"
+	},
+	{
+		"title": "Where the Forest Meets the Stars",
+		"author": "Glendy Vanderah",
+		"genre": "Fiction",
+		"publication_year": 2019,
+		"price": 14.99,
+		"description": "A touching story about loss, healing, and the power of love, as a woman's solitary life in a remote cabin is disrupted by the arrival of a mysterious child with a secret.",
+		"quantity": 60,
+		"image": "https://m.media-amazon.com/images/I/51sZRlFOe6L.jpg"
+	},
+	{
+		"title": "The Vanishing Half",
+		"author": "Brit Bennett",
+		"genre": "Fiction",
+		"publication_year": 2020,
+		"price": 20.99,
+		"description": "A novel exploring themes of identity, race, and family, as twin sisters lead vastly different lives, one passing as white while the other embraces her black heritage.",
+		"quantity": 35,
+		"image": "https://m.media-amazon.com/images/I/81ICvbFe2+L._AC_UF1000,1000_QL80_.jpg"
+	},
+	{
+		"title": "Such a Fun Age",
+		"author": "Kiley Reid",
+		"genre": "Fiction",
+		"publication_year": 2019,
+		"price": 15.75,
+		"description": "A thought-provoking novel about race, privilege, and social dynamics, as a young black woman working as a babysitter becomes entangled in her employer's personal and professional life.",
+		"quantity": 40,
+		"image": "https://m.media-amazon.com/images/I/51f9h-XotyL.jpg"
+	},
+	{
+		"title": "The Guest List",
+		"author": "Lucy Foley",
+		"genre": "Mystery",
+		"publication_year": 2020,
+		"price": 18.99,
+		"description": "A thrilling and atmospheric mystery set on a remote island off the coast of Ireland, where a glamorous wedding celebration turns deadly.",
+		"quantity": 30,
+		"image": "https://m.media-amazon.com/images/I/81sh+BJhaOS._AC_UF1000,1000_QL80_.jpg"
+	},
+	{
+		"title": "Educated",
+		"author": "Tara Westover",
+		"genre": "Memoir",
+		"publication_year": 2018,
+		"price": 13.99,
+		"description": "The memoir of Tara Westover, who grew up in a strict and isolated household in rural Idaho and went on to pursue education against all odds, eventually earning a PhD from Cambridge University.",
+		"quantity": 65,
+		"image": "https://m.media-amazon.com/images/I/71-4MkLN5jL._AC_UF1000,1000_QL80_.jpg"
+	},
+	{
+		"title": "The Water Dancer",
+		"author": "Ta-Nehisi Coates",
+		"genre": "Historical Fiction",
+		"publication_year": 2019,
+		"price": 22.99,
+		"description": "A powerful novel exploring the legacy of slavery and the fight for freedom, as a young man with a mysterious power embarks on a journey to rescue his enslaved family.",
+		"quantity": 25,
+		"image": "https://m.media-amazon.com/images/I/91gh9H5yZyL._AC_UF1000,1000_QL80_.jpg"
+	},
+	{
+		"title": "Normal People",
+		"author": "Sally Rooney",
+		"genre": "Fiction",
+		"publication_year": 2018,
+		"price": 16.49,
+		"description": "An intimate and emotionally resonant novel about the complex relationship between two young people from different backgrounds as they navigate love, friendship, and adulthood.",
+		"quantity": 75,
+		"image": "https://m.media-amazon.com/images/I/71fnqwR0eSL._AC_UF1000,1000_QL80_.jpg"
+	},
+	{
+		"title": "The Dutch House",
+		"author": "Ann Patchett",
+		"genre": "Fiction",
+		"publication_year": 2019,
+		"price": 23.25,
+		"description": "A compelling family saga spanning five decades, revolving around the lives of siblings and their connection to the opulent estate known as the Dutch House.",
+		"quantity": 20,
+		"image": "https://m.media-amazon.com/images/I/91TscA6252L._AC_UF1000,1000_QL80_.jpg"
+	},
+	{
+		"title": "The Nickel Boys",
+		"author": "Colson Whitehead",
+		"genre": "Historical Fiction",
+		"publication_year": 2019,
+		"price": 19.99,
+		"description": "Inspired by true events, this novel follows the experiences of two boys at a reform school in Jim Crow-era Florida, shedding light on systemic injustice and resilience in the face of adversity.",
+		"quantity": 40,
+		"image": "https://m.media-amazon.com/images/I/81MP-W2DsbL._AC_UF1000,1000_QL80_.jpg"
+	},
+	{
+		"title": "Circe",
+		"author": "Madeline Miller",
+		"genre": "Fantasy",
+		"publication_year": 2018,
+		"price": 15.99,
+		"description": "A spellbinding retelling of the myth of Circe, the enchantress from Homer's Odyssey, as she discovers her own powers and navigates the complexities of immortality, love, and identity.",
+		"quantity": 55,
+		"image": "https://m.media-amazon.com/images/I/B1eAVSHxJ4L._AC_UF1000,1000_QL80_.jpg"
+	},
+	{
+		"title": "The Testaments",
+		"author": "Margaret Atwood",
+		"genre": "Science Fiction",
+		"publication_year": 2019,
+		"price": 20.5,
+		"description": "A sequel to Margaret Atwood's dystopian masterpiece, The Handmaid's Tale, providing insight into the inner workings of the oppressive regime of Gilead through the perspectives of three different women.",
+		"quantity": 30,
+		"image": "https://m.media-amazon.com/images/I/61grm5n2FrL._AC_UF1000,1000_QL80_.jpg"
+	},
+	{
+		"title": "Little Fires Everywhere",
+		"author": "Celeste Ng",
+		"genre": "Fiction",
+		"publication_year": 2017,
+		"price": 14.75,
+		"description": "A compelling novel about motherhood, privilege, and the complexities of human relationships, as the lives of two families in suburban Ohio become intertwined and secrets come to light.",
+		"quantity": 45,
+		"image": "https://m.media-amazon.com/images/I/91twTG-CQ8L._AC_UF1000,1000_QL80_.jpg"
+	}
+]

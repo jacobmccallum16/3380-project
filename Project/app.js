@@ -25,9 +25,6 @@ const Header = () => {
             </div>
           </div>
           <div className="cart">
-            <a href="cart.html" className="nav-link">
-              <i className="bi bi-bag-fill"></i> Cart
-            </a>
           </div>
 
           <button
