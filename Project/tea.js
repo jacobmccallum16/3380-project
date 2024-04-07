@@ -10,27 +10,58 @@ function formatPrice(price) {
 const Header = () => {
   return (
     <header>
-    <nav className="navbar navbar-expand-md text-bg-teal">
-      <div className="container-fluid px-3">
-        <a href="" className="navbar-brand rounded-5 px-2 mb-0 h1 fw-bolder">
-          Project
-        </a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <div className="navbar-nav px-3">
-            <a href="index.html" className="nav-link">Home</a>
-            <a href="#" className="nav-link">Coffee</a>
-            <a href="tea.html" className="nav-link active">Tea</a>
-            <a href="#" className="nav-link">Chocolate</a>
-            <a href="index.html" className="nav-link">About</a>
-            <a href="cart.html" className="nav-link"><i className="bi bi-bag-fill"></i> Cart</a>
+      <nav className="navbar navbar-expand-md">
+        <div className="container-fluid px-3">
+          <img
+            href=""
+            src="./public/greentrans.png"
+            className="logoimg"
+            width="200"/>
+
+          <div className="col-sm" id="navbarNav">
+            <div className="navbar-nav">
+              <a href="home.html" className="nav-link">
+                Home
+              </a>
+              <a href="tea.html" className="nav-link">
+                Tea
+              </a>
+              <a href="about.html" className="nav-link">
+                About
+              </a>
+            </div>
           </div>
-      </div>
-      </div>
-    </nav>
-  </header>
+          <div className="cart">
+          <a href="cart.html" className="nav-link">
+              <i className="bi bi-bag-fill"></i> Cart
+            </a>
+          </div>
+          <div className="loginright">
+            <a href="login.html" className="nav-link">
+              <i className="bi-person-fill"></i> Login
+            </a>
+          </div>
+          <div className="signup-right">
+            <a href="signup.html" className="nav-link">
+              <i className="bi-person-plus-fill"></i> Signup
+            </a>
+          </div>
+
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle Navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+      <img href="" src="./public/shopping.png" className="bgimg" />
+    </header>
   )
 }
 const COLS = ["col-auto", "col-12", 'col-12 col-lg-6', 'col-12 col-md-6 col-xl-4', 'col-12 col-sm-6 col-lg-4 col-xl-3']
@@ -179,9 +210,44 @@ const Main = () => {
 
 const Footer = () => {
   return (
-    <footer className="text-bg-teal text-center p-1">
-      Project
-    </footer>
+    <div className="frame">
+      <div className="overlap-group-wrapper">
+        <div className="overlap-group">
+          <div className="socila-icons">
+            <img className="img" src="public/img/medium-negative.svg" />
+            <img className="img" src="public/img/negative.svg" />
+            <img className="img" src="public/img/tiktok-negative.svg" />
+            <img className="img" src="public/img/twitter-negative.svg" />
+          </div>
+          <div className="sitemap">
+            <div className="text-wrapper">Get In Touch</div>
+            <div className="div">+012-345-6789</div>
+            <div className="div-wrapper">
+              <div className="text-wrapper-2">Tealand@contact.com</div>
+            </div>
+            <div className="div-wrapper">
+              <p className="text-wrapper-2">
+                9889 Lorem Ipsum Street, Pellentesque, Ca, Usa
+              </p>
+            </div>
+          </div>
+          <div className="sitemap-2">
+            <div className="text-wrapper">Working Hours</div>
+            <div className="div">Monday/friday 9:00-23:00</div>
+            <div className="div-wrapper">
+              <div className="text-wrapper-2">Saturday 10:00-21:00</div>
+            </div>
+            <div className="div-wrapper">
+              <div className="text-wrapper-2">Weekend Closed</div>
+            </div>
+          </div>
+
+          <div className="text-wrapper-3">Copyright Dotcreativemarket</div>
+
+          <img className="whitetrans" src="public/img/whitetrans-1.png" />
+        </div>
+      </div>
+    </div>
   )
 }
 

@@ -3,7 +3,7 @@ const { useState, useEffect } = React;
 const Header = () => {
   return (
     <header>
-      <nav className="navbar navbar-expand-md text-bg-teal">
+      <nav className="navbar navbar-expand-md">
         <div className="container-fluid px-3">
           <img
             href=""
@@ -11,26 +11,13 @@ const Header = () => {
             className="logoimg"
             width="200"
           />
-          {/* <a href="" className="navbar-brand rounded-5 px-2 mb-0 h1 fw-bolder">
-            Project
-          </a> */}
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle Navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <div className="navbar-nav px-3">
+
+          <div className="col-sm" id="navbarNav">
+            <div className="navbar-nav">
               <a href="home.html" className="nav-link">
                 Home
               </a>
-              <a href="index.html" className="nav-link">
+              <a href="tea.html" className="nav-link">
                 Tea
               </a>
               <a href="about.html" className="nav-link">
@@ -43,6 +30,18 @@ const Header = () => {
               <i className="bi bi-bag-fill"></i> Cart
             </a>
           </div>
+
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle Navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
         </div>
       </nav>
     </header>
@@ -195,7 +194,6 @@ const Main = () => {
   return (
     <main className="bg-teal-100 text-center p-3">
       <div className="bg-teal-200 rounded-3 pt-3">
-        Container!!
         <div className="row g-3 p-3">
           {itemsInCart.map(item => {
             let link = `products/` + item
@@ -203,7 +201,6 @@ const Main = () => {
           })}
         </div>
       </div>
-      Lots of text!
     </main>
   );
 };
@@ -232,7 +229,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="sitemap-2">
-          <div className="text-wrapper">Working Our</div>
+          <div className="text-wrapper">Working Hours</div>
           <div className="div">Monday/friday 9:00-23:00</div>
           <div className="div-wrapper">
             <div className="text-wrapper-2">Saturday 10:00-21:00</div>

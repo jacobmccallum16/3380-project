@@ -50,7 +50,13 @@ body,html{
     margin-left: 10px;
   }
   .cart{
-    margin-right: 5%;
+    margin-right: 1%;
+  }
+  .loginright{
+    margin-right: 1%;
+  }
+  .signup-right{
+    margin-right: 1%;
   }
 
   /* footer */
