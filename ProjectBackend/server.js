@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const http = require('http')
+const bcrypt = require('bcrypt');
 
 require('dotenv').config();
 // const URI = process.env.MONGODB_URI
@@ -16,11 +17,11 @@ app.use(express.json())
 
 // const URI = "mongodb://localhost:27017/3380-Project"
 // "/teaorganic/teas"
-mongoose.connect(URI, {useNewUrlParser: true, useUnifiedTopology: true})
-	.then (() => {
+mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
+	.then(() => {
 		console.log(`Connected to MongoDB server!!`)
 		const server = http.createServer(app)
-		server.listen(port, () => {console.log(`HTTP Server is running on port ${port}`)})
+		server.listen(port, () => { console.log(`HTTP Server is running on port ${port}`) })
 		// app.listen(port, () => console.log(`Server is running on port ${port}`))
 	})
 	.catch((error) => {
@@ -30,17 +31,27 @@ mongoose.connect(URI, {useNewUrlParser: true, useUnifiedTopology: true})
 const Schema = mongoose.Schema
 
 const teaSchema = new Schema({
-	title: {type: String, required: true},
-	type: {type: String, required: true},
-	description: {type: String, required: true},
-	origin: {type: String, required: true},
-	harvestSeason: {type: String},
-	price: {type: Number, required: true},
-	quantity: {type: Number, required: true},
-	image: {type: String, required: true}
+	title: { type: String, required: true },
+	type: { type: String, required: true },
+	description: { type: String, required: true },
+	origin: { type: String, required: true },
+	harvestSeason: { type: String },
+	price: { type: Number, required: true },
+	quantity: { type: Number, required: true },
+	image: { type: String, required: true }
 })
 
 const Tea = mongoose.model("Tea", teaSchema)
+
+//user schema
+
+const userSchema = new Schema({
+	fullname: { type: String, required: true },
+	email: { type: String, required: true, unique: true },
+	password: { type: String, required: true },
+});
+
+const User = mongoose.model("User", userSchema)
 
 const router = express.Router()
 app.use('/api', router)
@@ -112,3 +123,33 @@ router.route('/delete/:id')
 			.then(() => res.json("Tea deleted"))
 			.catch((err) => res.status(400).json(`Error deleting tea ${err}`))
 	})
+
+
+router.post('/register', async (req, res) => {
+	try {
+		const { fullname, email, password } = req.body;
+
+		// Check if user already exists
+		const existingUser = await User.findOne({ email });
+		if (existingUser) {
+			return res.status(400).json({ message: 'User already exists' });
+		}
+
+		// Hash the password
+		const hashedPassword = await bcrypt.hash(password, 10);
+
+		const newUser = new User({
+			fullname,
+			email,
+			password: hashedPassword,
+		});
+
+		// Save the user to the database
+		await newUser.save();
+
+		res.status(201).json({ message: 'User registered successfully' });
+	} catch (error) {
+		console.error('Error registering user:', error);
+		res.status(500).json({ message: 'Internal server error' });
+	}
+});

@@ -1,4 +1,4 @@
-const { useState, useEffect } = React;
+const { useState } = React;
 
 const Header = () => {
   return (
@@ -55,35 +55,77 @@ const Header = () => {
 };
 
 const Main = () => {
+
+  const [fullname, setFullname] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  //localhost URI
+  const URI = 'http://localhost:3003/api/register'
+  const handleRegistration = (event) => {
+    event.preventDefault();
+
+    //check if passwords match
+    if (password !== confirmPassword) {
+      alert('Passwords do not match');
+      return;
+    }
+
+    fetch(URI, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        fullname,
+        email,
+        password,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        //temporary?...
+        alert('Succesfully registered.');
+        setFullname('');
+        setEmail('');
+        setPassword('');
+        setConfirmPassword('');
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  };
+
   return (
-    <main >
+    <main>
       <input type="hidden" id="anPageName" name="page" value="signup" />
-      <div class="container-center-horizontal">
-        <div class="signup screen">
-          <form action="/register" method="POST">
-            <div class="content">
+      <div className="container-center-horizontal">
+        <div className="signup screen">
+          <form onSubmit={handleRegistration}>
+            <div className="content">
               <img
                 class="greentrans-1"
                 src="./public/greentrans-1.png"
                 alt="greentrans 1"
               />
-              <div class="full-name_-input">
-                <div class="full-name poppins-medium-abbey-14px">Full Name</div>
-                <input type="text" className="form-control" placeholder="Enter your name" name="fullname" />
+              <div className="full-name_-input">
+                <div className="full-name poppins-medium-abbey-14px">Full Name</div>
+                <input type="text" className="form-control" placeholder="Enter your name" name="fullname" value={fullname} onChange={(e) => setFullname(e.target.value)} required />
               </div>
-              <div class="_-input">
-                <div class="email poppins-medium-abbey-14px">Email</div>
-                <input type="text" className="form-control" placeholder="Enter your email" name="email" />
+              <div className="_-input">
+                <div className="email poppins-medium-abbey-14px">Email</div>
+                <input type="text" className="form-control" placeholder="Enter your email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
               </div>
-              <div class="_-input">
-                <div class="password poppins-medium-abbey-14px">Password</div>
-                <input type="password" className="form-control" placeholder="Enter your password" name="password" />
+              <div className="_-input">
+                <div className="password poppins-medium-abbey-14px">Password</div>
+                <input type="password" className="form-control" placeholder="Enter your password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
               </div>
-              <div class="_-input">
-                <div class="password poppins-medium-abbey-14px">Confirm Password</div>
-                <input type="password" className="form-control" placeholder="Confirm your password" name="confirmpassword" />
+              <div className="_-input">
+                <div className="password poppins-medium-abbey-14px">Confirm Password</div>
+                <input type="password" className="form-control" placeholder="Confirm your password" name="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
               </div>
-              <button type="submit" class="btn_-create-account">SignUp</button>
+              <button type="submit" className="btn_-create-account">SignUp</button>
               <p class="have-an-account">
                 <span class="span0">Already have an account?</span>
                 <span class="span1">&nbsp;</span>
@@ -93,7 +135,7 @@ const Main = () => {
           </form>
 
           <img
-            class="chris-lee-70l1t-dai6r-m-unsplash-1"
+            className="chris-lee-70l1t-dai6r-m-unsplash-1"
             src="./public/chris-lee-70l1tdai6rm-unsplash-1.png"
             alt="chris-lee-70l1tDAI6rM-unsplash 1"
           />
