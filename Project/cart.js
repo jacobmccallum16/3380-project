@@ -1,5 +1,15 @@
 const { useState, useEffect } = React;
 
+// const URI = "http://34.83.182.59:3003/api";
+const URI = "http://127.0.0.1:3003/api";
+
+function formatPrice(price) {
+  let dollars = Math.floor(price);
+  let cents = Math.round((price - dollars) * 100);
+  let formattedPrice = `$ ${dollars}.${cents}`;
+  return formattedPrice;
+}
+
 const Header = () => {
   return (
     <header>
@@ -57,14 +67,13 @@ const COLS = [
 ];
 
 const CardCol = (props) => {
-
   const [data, setData] = useState(null);
   const [inCartQty, setInCartQty] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let response = await fetch(`https://fakestoreapi.com/${props.link}`);
+        let response = await fetch(`${URI}/${props.prodId}`);
         let result = await response.json();
         setData(result);
         let qty =
@@ -103,8 +112,10 @@ const CardCol = (props) => {
               </div>
               <h5 className="card-title text-start">{data.title}</h5>
               <h6 className="row">
-                <span className="col-auto">{data.category}</span>
-                <span className="ms-auto col-auto">{data.rating.rate} ⭐️</span>
+                <span className="col-auto">{data.type}</span>
+                <span className="ms-auto col-auto">
+                  {formatPrice(data.price)}
+                </span>
               </h6>
               <p className="card-text text-start small">
                 &emsp;{data.description}
@@ -115,7 +126,7 @@ const CardCol = (props) => {
                 <div className="btn-group">
                   <button
                     onClick={() => handleClick(props.prodId, -1)}
-                    className="btn btn-red"
+                    className="btn1 btn-red"
                   >
                     &ensp;-1&ensp;
                   </button>
@@ -124,7 +135,7 @@ const CardCol = (props) => {
                   </a>
                   <button
                     onClick={() => handleClick(props.prodId, 1)}
-                    className="btn btn-green"
+                    className="btn1 btn-green"
                   >
                     &ensp;+1&ensp;
                   </button>
@@ -134,7 +145,7 @@ const CardCol = (props) => {
               <div className="text-end pt-2">
                 <button
                   onClick={() => handleClick(props.prodId, 1)}
-                  className="btn btn-green"
+                  className="btn1 btn-green"
                 >
                   Add to Cart
                 </button>
@@ -178,12 +189,11 @@ let itemsInCart = [];
 let localStorageLength = localStorage.length;
 for (let i = 0; i < localStorageLength; i++) {
   let key = localStorage.key(i);
-  console.log(`key ${i}: ${key}`);
+  // console.log(`key ${i}: ${key}`);
   if (Number(localStorage.getItem(key)) > 0) {
     itemsInCart.push(localStorage.key(i));
   }
 }
-console.log(`itemsInCart:`);
 console.log(itemsInCart);
 
 const Main = () => {
@@ -196,12 +206,11 @@ const Main = () => {
       <div className="bg-teal-200 rounded-3 pt-3">
         <div className="row g-3 p-3">
           {itemsInCart.map(item => {
-            let link = `products/` + item
-            return (<CardCol cols="4" link={link} prodId={item}/>)
+            return (<CardCol cols="4" prodId={item} key={item}/>)
           })}
         </div>
-        <div class="button-container">
-          <button class="checkout-btn" >Check Out</button>
+        <div className="button-container">
+          <a className="btn checkout-btn" href="orderSum.html" type="button">Check Out</a>
         </div>
       </div>
 
