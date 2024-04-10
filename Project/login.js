@@ -1,4 +1,4 @@
-const { useState, useEffect } = React;
+const { useState } = React;
 
 const Header = () => {
   return (
@@ -55,39 +55,87 @@ const Header = () => {
 };
 
 const Main = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const URI = 'http://localhost:3003/api/login'
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await fetch(URI, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Login successful
+        alert('Login Successful') //temporary
+        console.log(data.message);
+        // Redirect or show success message
+      } else {
+        // Login failed
+        alert('Login Failed') //temporary
+      }
+    } catch (error) {
+      console.error('An error occurred. Please try again later.:', error);
+    }
+  };
+
   return (
     <main className="bg-teal-100 text-center p-3">
       <div class="login screen">
         <div class="content">
-          <form action="/login" method="POST">
+          <form onSubmit={handleSubmit}>
             <div class="overlap-group1 overlap">
-              <img
-                class="greentrans-1"
-                src="./public/greentrans-1.png"
-                alt="greentrans 1"
-              />
               <div class="title">Welcome to TeaOrganic!</div>
 
               <div class="form">
                 <div class="email_-input">
                   <div class="email">Email</div>
-                  <input type="text" className="form-control" placeholder="Enter your Email here" name="email" />
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Enter your Email here"
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                    name="email"
+                  />
                 </div>
                 <div class="password_-input">
                   <div class="password">Password</div>
-                  <input type="password" className="form-control" placeholder="Enter your Password" name="password" />
+                  <input
+                    type="password"
+                    className="form-control"
+                    placeholder="Enter your Password"
+                    value={password}
+                    onChange={(event) => setPassword(event.target.value)}
+                    name="password"
+                  />
                 </div>
                 <div class="action-buttons">
-                  <button type="submit" class="btn_-create-account">Log In</button>
+                  <button type="submit" class="btn_-create-account">
+                    Log In
+                  </button>
                   <p class="have-an-account">
                     <span class="span0">Don’t have an account?</span>
                     <span class="span1">&nbsp;</span>
-                    <a href="signup.html" class="span2">Sign Up</a>
+                    <a href="signup.html" class="span2">
+                      Sign Up
+                    </a>
                   </p>
                 </div>
               </div>
             </div>
           </form>
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
         </div>
         <img
           class="chris-lee-70l1t-dai6r-m-unsplash-2"
