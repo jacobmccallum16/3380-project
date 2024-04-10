@@ -200,7 +200,11 @@ const Main = () => {
             return (<CardCol cols="4" link={link} prodId={item}/>)
           })}
         </div>
+        <div class="button-container">
+          <button class="checkout-btn" >Check Out</button>
+        </div>
       </div>
+
     </main>
   );
 };

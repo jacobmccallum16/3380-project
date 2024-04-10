@@ -63,6 +63,42 @@ header{
   margin-right: 1%;
 }
 
+.btn1{
+  background-color: rgb(47, 47, 47);
+  color: #ffffff; 
+  padding: 8px; /* Padding for the button */
+  border: none; /* Remove default border */
+  border-radius: 10px; /* Add border-radius for rounded corners */
+  cursor: pointer; 
+}
+.btn1:hover {
+  background-color: #acc33e; /* Darker shade of black on hover */
+}
+
+/* Active state for the button when clicked */
+.btn1:active {
+  background-color: #666666; /* Even darker shade when button is active/clicked */
+}
+
+.bg-teal-100 {
+
+  --bs-bg-opacity: 1;
+  background-color: #F4F3EE !important;
+}
+.bg-teal-200 {
+  padding:30px;
+  margin:auto;
+  width:80%;
+--bs-bg-opacity: 1;
+background-color: #FFFDF7 !important;
+}
+
+.card {
+  box-shadow: 0px 0px 6px rgba(231, 238, 196, 0.9);
+  border:none;
+}
+
+
 
 .frame {
   background-color: transparent;

@@ -1,0 +1,234 @@
+body,html{
+    width:100%;
+  }
+  #reactDiv {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width:100%;
+  }
+
+  header{
+    width:100%;
+    background-color: #EBEBEB;
+    
+  }
+  .bgimg{
+    width:100%;
+  }
+  main {
+    flex: 1;
+    width:100%;
+    background-color: #FFFDF7;
+  }
+
+  .navbar {
+    background-color: #FFFDF7;
+    border-bottom: 0.1px solid black;
+  }
+  .container-fluid{
+    width:100%;
+    background-color: #FFFDF7;
+  }
+  .navbar-nav a {
+    color:#1e312a;
+    font-family: "Philosopher-Bold", Helvetica;
+    
+  }
+  
+  .nav-link:hover{
+    color:rgb(88, 192, 149);
+  }
+  .navbar-nav .nav-link:active,
+  .navbar-nav .nav-link:focus {
+    color: rgb(88, 192, 149);
+  }
+  .logoimg{
+    margin-left: 5%;
+  }
+  #navbarNav{
+    margin-left: 10px;
+  }
+  .cart{
+    margin-right: 5%;
+  }
+ 
+
+  main h3{
+    font-family: var(--font-family-roboto_serif);
+
+    color: #043133;
+    font-size: xxx-large;
+  font-weight: bold;
+  margin-bottom: 10px;
+  }
+  main p{
+    font-family: var(--font-family-roboto_serif);
+
+    color: #043133;
+    font-size:small;
+  margin-bottom: 10px;
+  }
+
+.content{
+    width:85%;
+    margin:auto;
+    margin-top: 50px;
+}
+  /* footer */
+  .frame {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height:300px;
+    background-color: #1e312a;
+  }
+  
+  .frame .overlap-group-wrapper {
+    width: 100%;
+    height: auto;
+  }
+  
+  .frame .overlap-group {
+    position: relative;
+    height: 300px;
+    top: 29px;
+    background-color: var(--logo);
+  }
+  
+  .frame .socila-icons {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 39px;
+    position: absolute;
+    top: 200px;
+    left: 43%;
+  }
+  
+  .frame .img {
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .frame .sitemap {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 50px;
+    left: 5%;
+    color: #FFFDF7;
+  }
+  
+  .frame .text-wrapper {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Philosopher-Bold", Helvetica;
+    font-weight: 700;
+    color: var(--newgreenlight);
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .frame .div {
+    position: relative;
+    width: fit-content;
+    font-family: "Roboto-Light", Helvetica;
+    font-weight: 300;
+    color: var(--newgreenlight);
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .frame .div-wrapper {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 12px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .frame .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Roboto-Light", Helvetica;
+    font-weight: 300;
+    color: var(--newgreenlight);
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .frame .sitemap-2 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 50px;
+    right:5%;
+    color: #FFFDF7;
+  }
+  
+  .frame .line {
+    width: 1px;
+    height: 134px;
+    top: 97px;
+    left: 728px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .frame .line-2 {
+    width: 1px;
+    height: 134px;
+    top: 97px;
+    left: 1193px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .frame .line-3 {
+    width: 1920px;
+    height: 1px;
+    top: 342px;
+    left: 0;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .frame .text-wrapper-3 {
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    font-family: "Roboto-Light", Helvetica;
+    font-weight: 300;
+    color: #FFFDF7;
+    background-color: #1e312a;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: revert;
+    white-space: nowrap;
+  }
+  
+  .frame .whitetrans {
+    position: absolute;
+    width: 320px;
+    height: 151px;
+    top: 20px;
+    left: 40%;
+    object-fit: cover;
+  }
+  
