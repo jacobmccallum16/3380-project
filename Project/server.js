@@ -10,13 +10,17 @@ const { dirname } = require('path')
 const app = express()
 const port = process.env.PORT || 3003;
 
-app.use(cors())
+app.use(cors({
+  origin: "http://localhost:3003",
+  credentials: true,
+}))
 app.use(express.json())
 app.use(express.static('public'));
 app.use(session({
   secret: 'session secret',
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  secure: false
 }));
 app.use(express.urlencoded({ extended: false }));
 
@@ -66,6 +70,92 @@ app.get('/hi', (req, res) => {
 
 // API server
 // Using primarily GET and POST requests to simplify develpoment
+
+// Users
+app.post('/api/register', async (req, res) => {
+  try {
+    const { fullname, email, password } = req.body;
+
+		// Check if user already exists
+		const existingUser = await User.findOne({ email });
+		if (existingUser) {
+			return res.status(400).json({ message: 'User already exists' });
+		}
+
+		// Hash the password
+		const hashedPassword = await bcrypt.hash(password, 10);
+
+		const newUser = new User({
+			fullname,
+			email,
+			password: hashedPassword,
+		});
+
+		// Save the user to the database
+		await newUser.save();
+		res.status(201).json({ message: 'User registered successfully' });
+  } catch (error) {
+    console.error('Error registering user:', error);
+		res.status(500).json({ message: 'Internal server error' });
+  }
+})
+app.post('/api/login', async (req, res, next) => {
+  const { email, password } = req.body;
+
+  try {
+    if (!email || !password) {
+      return res.status(400).json({ message: 'All fields required.' });
+    }
+    const user = await User.findOne({ email: email });
+    
+    if (!user) {
+      return res.status(401).json({ message: 'User not found' });
+    }
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    
+    if (!isPasswordValid) {
+      return res.status(401).json({ message: 'Invalid password' });
+    }
+    
+    // Password is valid, login successful
+    if (isPasswordValid) {
+      req.session.userId = user._id;
+      req.session.fullname = user.fullname;
+      req.session.email = user.email;
+      console.log(user._id + " is logged in")
+      // res.status(200).json({ message: 'Login successful' });
+      res.redirect('/tea.html')
+    }
+  } catch (error) {
+    next(error);
+  }
+})
+// This route is purely for testing the req.session cookie.
+// If accessed directly it provides the username and email (while logged in)
+// If accessed indirectly it doesn't provide the username or email (even if logged in)
+// I don't understand why this is happening
+app.get('/api/session', async (req, res) => {
+  console.log('/api/session')
+  console.log(req.session)
+  console.log(`req.session ${JSON.stringify(req.session)}`)
+  res.json(req.session)
+})
+// I don't get why this never works
+app.get('/api/username', (req, res) => {
+  console.log(`req.session ${JSON.stringify(req.session)}`)
+  let session = JSON.stringify(req.session)
+  console.log(session)
+  if (JSON.stringify(req.session.fullname) != undefined) {
+    console.log(`req.session.fullname: ${req.session.fullname}`)
+    console.log(`req.session.fullname ${JSON.stringify(req.session.fullname)}`)
+    // res.send(`{ "fullname": ${JSON.stringify(req.session.fullname)} }`)
+    console.log('success')
+    res.send(`{ "fullname": "Jacob" }`)
+  } else {
+    console.log('error')
+    res.send(`{ "fullname": "-" }`)
+  }
+})
 
 // Teas
 app.get('/api/', async (req, res) => {
@@ -120,64 +210,6 @@ app.post('/api/delete/:id', async (req, res) => {
   Tea.findByIdAndDelete(req.params.id)
     .then(() => res.json("Tea deleted"))
     .catch((err) => res.status(400).json(`Error deleting tea ${err}`))
-})
-
-// Users
-app.post('/api/register', async (req, res) => {
-  try {
-    const { fullname, email, password } = req.body;
-
-		// Check if user already exists
-		const existingUser = await User.findOne({ email });
-		if (existingUser) {
-			return res.status(400).json({ message: 'User already exists' });
-		}
-
-		// Hash the password
-		const hashedPassword = await bcrypt.hash(password, 10);
-
-		const newUser = new User({
-			fullname,
-			email,
-			password: hashedPassword,
-		});
-
-		// Save the user to the database
-		await newUser.save();
-		res.status(201).json({ message: 'User registered successfully' });
-  } catch (error) {
-    console.error('Error registering user:', error);
-		res.status(500).json({ message: 'Internal server error' });
-  }
-})
-app.post('/api/login', async (req, res, next) => {
-  const { email, password } = req.body;
-
-  try {
-    if (!email || !password) {
-      return res.status(400).json({ message: 'All fields required.' });
-    }
-    const user = await User.findOne({ email: email });
-    
-    if (!user) {
-      return res.status(401).json({ message: 'User not found' });
-    }
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-    
-    if (!isPasswordValid) {
-      return res.status(401).json({ message: 'Invalid password' });
-    }
-    
-    // Password is valid, login successful
-    if (isPasswordValid) {
-      req.session.userId = user._id;
-      console.log(user._id + " is logged in")
-      // res.status(200).json({ message: 'Login successful' });
-      res.redirect('/tea.html')
-    }
-  } catch (error) {
-    next(error);
-  }
 })
 
 // Basic file server
