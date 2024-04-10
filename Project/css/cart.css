@@ -50,7 +50,69 @@ body,html{
     margin-left: 10px;
   }
   .cart{
-    margin-right: 5%;
+    margin-right: 1%;
+  }
+  .loginright{
+    margin-right: 1%;
+  }
+  .signup-right{
+    margin-right: 1%;
+  }
+
+  .bg-teal-100 {
+
+    --bs-bg-opacity: 1;
+    background-color: #F4F3EE !important;
+  }
+  .bg-teal-200 {
+    padding:30px;
+    margin:auto;
+    width:80%;
+  --bs-bg-opacity: 1;
+  background-color: #FFFDF7 !important;
+  }
+  
+  .card {
+    box-shadow: 0px 0px 6px rgba(231, 238, 196, 0.9);
+    border:none;
+  }
+
+  .btn{
+    background-color: rgb(47, 47, 47);
+    color: #ffffff; 
+    padding: 5px 8px; /* Padding for the button */
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    cursor: pointer; 
+  }
+  .btn:hover {
+    background-color: #acc33e; /* Darker shade of black on hover */
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    padding: 20px; /* Add padding for spacing */
+  }
+
+  .checkout-btn {
+    background-color: #000000; /* Black background color */
+    color: #ffffff; /* White text color */
+    padding: 10px 20px; /* Padding around the text */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Cursor style */
+  }
+
+  /* Hover effect for the button */
+  .checkout-btn:hover {
+    background-color: #acc33e; /* Darker shade of black on hover */
+  }
+
+  /* Active state for the button when clicked */
+  .checkout-btn:active {
+    background-color: #666666; /* Even darker shade when button is active/clicked */
   }
 
   /* footer */

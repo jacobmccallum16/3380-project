@@ -75,6 +75,27 @@
   --font-family-roboto: "Roboto", Helvetica;
   --font-family-roboto-regular: "Roboto-Regular", Helvetica;
   --font-family-roboto_serif-regular: "Roboto Serif-Regular", Helvetica;
+
+  --black: #000000;
+  --color--primary--tints: #faf0ca;
+  --color--white: #ffffff;
+  --colorwhite: #ffffff;
+  --fuscous-gray: #525252;
+  --suva-gray: #888888;
+ 
+  --font-size-l: 15px;
+  --font-size-m: 12px;
+  --font-size-xl: 16px;
+  --font-size-xxl: 18px;
+  --font-size-xxxl: 20px;
+  --font-size-xxxxl: 24px;
+  --font-size-xxxxxl: 36px;
+ 
+  --font-family-inter: "Inter", Helvetica;
+  --font-family-jost: "Jost", Helvetica;
+  --font-family-open_sans: "Open Sans", Helvetica;
+  --font-family-roboto: "Roboto", Helvetica;
+  --font-family-roboto_serif: "Roboto Serif", Helvetica;
 }
 
 .smalltext {
@@ -188,5 +209,45 @@
   font-size: var(--font-size-xl);
   font-style: normal;
   font-weight: 400;
+}
+
+.inter-normal-fuscous-gray-24px {
+  color: var(--fuscous-gray);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xxxxl);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.inter-medium-fuscous-gray-18px {
+  color: var(--fuscous-gray);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.inter-normal-suva-gray-12px {
+  color: var(--suva-gray);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.inter-semi-bold-fuscous-gray-16px {
+  color: var(--fuscous-gray);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.opensans-bold-suva-gray-12px {
+  color: var(--suva-gray);
+  font-family: var(--font-family-open_sans);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 700;
 }
 

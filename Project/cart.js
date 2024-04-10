@@ -1,9 +1,19 @@
 const { useState, useEffect } = React;
 
+// const URI = "http://34.83.182.59:3003/api";
+const URI = "http://127.0.0.1:3003/api";
+
+function formatPrice(price) {
+  let dollars = Math.floor(price);
+  let cents = Math.round((price - dollars) * 100);
+  let formattedPrice = `$ ${dollars}.${cents}`;
+  return formattedPrice;
+}
+
 const Header = () => {
   return (
     <header>
-      <nav className="navbar navbar-expand-md text-bg-teal">
+      <nav className="navbar navbar-expand-md">
         <div className="container-fluid px-3">
           <img
             href=""
@@ -11,26 +21,13 @@ const Header = () => {
             className="logoimg"
             width="200"
           />
-          {/* <a href="" className="navbar-brand rounded-5 px-2 mb-0 h1 fw-bolder">
-            Project
-          </a> */}
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle Navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <div className="navbar-nav px-3">
+
+          <div className="col-sm" id="navbarNav">
+            <div className="navbar-nav">
               <a href="home.html" className="nav-link">
                 Home
               </a>
-              <a href="index.html" className="nav-link">
+              <a href="tea.html" className="nav-link">
                 Tea
               </a>
               <a href="about.html" className="nav-link">
@@ -43,23 +40,40 @@ const Header = () => {
               <i className="bi bi-bag-fill"></i> Cart
             </a>
           </div>
+
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle Navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
         </div>
       </nav>
     </header>
   );
 };
 
-const COLS = ["col-auto", "col-12", 'col-12 col-lg-6', 'col-12 col-md-6 col-xl-4', 'col-12 col-sm-6 col-lg-4 col-xl-3']
+const COLS = [
+  "col-auto",
+  "col-12",
+  "col-12 col-lg-6",
+  "col-12 col-md-6 col-xl-4",
+  "col-12 col-sm-6 col-lg-4 col-xl-3",
+];
 
 const CardCol = (props) => {
-
   const [data, setData] = useState(null);
   const [inCartQty, setInCartQty] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let response = await fetch(`https://fakestoreapi.com/${props.link}`);
+        let response = await fetch(`${URI}/${props.prodId}`);
         let result = await response.json();
         setData(result);
         let qty =
@@ -98,8 +112,10 @@ const CardCol = (props) => {
               </div>
               <h5 className="card-title text-start">{data.title}</h5>
               <h6 className="row">
-                <span className="col-auto">{data.category}</span>
-                <span className="ms-auto col-auto">{data.rating.rate} ⭐️</span>
+                <span className="col-auto">{data.type}</span>
+                <span className="ms-auto col-auto">
+                  {formatPrice(data.price)}
+                </span>
               </h6>
               <p className="card-text text-start small">
                 &emsp;{data.description}
@@ -110,7 +126,7 @@ const CardCol = (props) => {
                 <div className="btn-group">
                   <button
                     onClick={() => handleClick(props.prodId, -1)}
-                    className="btn btn-red"
+                    className="btn1 btn-red"
                   >
                     &ensp;-1&ensp;
                   </button>
@@ -119,7 +135,7 @@ const CardCol = (props) => {
                   </a>
                   <button
                     onClick={() => handleClick(props.prodId, 1)}
-                    className="btn btn-green"
+                    className="btn1 btn-green"
                   >
                     &ensp;+1&ensp;
                   </button>
@@ -129,7 +145,7 @@ const CardCol = (props) => {
               <div className="text-end pt-2">
                 <button
                   onClick={() => handleClick(props.prodId, 1)}
-                  className="btn btn-green"
+                  className="btn1 btn-green"
                 >
                   Add to Cart
                 </button>
@@ -173,12 +189,11 @@ let itemsInCart = [];
 let localStorageLength = localStorage.length;
 for (let i = 0; i < localStorageLength; i++) {
   let key = localStorage.key(i);
-  console.log(`key ${i}: ${key}`);
+  // console.log(`key ${i}: ${key}`);
   if (Number(localStorage.getItem(key)) > 0) {
     itemsInCart.push(localStorage.key(i));
   }
 }
-console.log(`itemsInCart:`);
 console.log(itemsInCart);
 
 const Main = () => {
@@ -189,15 +204,16 @@ const Main = () => {
   return (
     <main className="bg-teal-100 text-center p-3">
       <div className="bg-teal-200 rounded-3 pt-3">
-        Container!!
         <div className="row g-3 p-3">
           {itemsInCart.map(item => {
-            let link = `products/` + item
-            return (<CardCol cols="4" link={link} prodId={item}/>)
+            return (<CardCol cols="4" prodId={item} key={item}/>)
           })}
         </div>
+        <div className="button-container">
+          <a className="btn checkout-btn" href="orderSum.html" type="button">Check Out</a>
+        </div>
       </div>
-      Lots of text!
+
     </main>
   );
 };
@@ -226,7 +242,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="sitemap-2">
-          <div className="text-wrapper">Working Our</div>
+          <div className="text-wrapper">Working Hours</div>
           <div className="div">Monday/friday 9:00-23:00</div>
           <div className="div-wrapper">
             <div className="text-wrapper-2">Saturday 10:00-21:00</div>

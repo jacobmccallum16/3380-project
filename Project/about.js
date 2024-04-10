@@ -17,7 +17,7 @@ const Header = () => {
               <a href="home.html" className="nav-link">
                 Home
               </a>
-              <a href="index.html" className="nav-link">
+              <a href="tea.html" className="nav-link">
                 Tea
               </a>
               <a href="about.html" className="nav-link">
@@ -28,6 +28,16 @@ const Header = () => {
           <div className="cart">
             <a href="cart.html" className="nav-link">
               <i className="bi bi-bag-fill"></i> Cart
+            </a>
+          </div>
+          <div className="loginright">
+            <a href="login.html" className="nav-link">
+              <i className="bi-person-fill"></i> Login
+            </a>
+          </div>
+          <div className="signup-right">
+            <a href="signup.html" className="nav-link">
+              <i className="bi-person-plus-fill"></i> Signup
             </a>
           </div>
 
@@ -190,7 +200,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="sitemap-2">
-            <div className="text-wrapper">Working Our</div>
+            <div className="text-wrapper">Working Hours</div>
             <div className="div">Monday/friday 9:00-23:00</div>
             <div className="div-wrapper">
               <div className="text-wrapper-2">Saturday 10:00-21:00</div>

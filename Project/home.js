@@ -1,6 +1,15 @@
 const { useState, useEffect } = React;
 
 const Header = () => {
+  useEffect(() => {
+    // Initialize Bootstrap Carousel when component mounts
+    const carouselElement = document.querySelector(".carousel");
+    if (carouselElement) {
+      new window.bootstrap.Carousel(carouselElement, {
+        interval: 5000, // Set the interval in milliseconds (2 seconds in this case)
+      });
+    }
+  }, []);
   return (
     <header>
       <nav className="navbar navbar-expand-md">
@@ -17,7 +26,7 @@ const Header = () => {
               <a href="home.html" className="nav-link">
                 Home
               </a>
-              <a href="index.html" className="nav-link">
+              <a href="tea.html" className="nav-link">
                 Tea
               </a>
               <a href="about.html" className="nav-link">
@@ -28,6 +37,17 @@ const Header = () => {
           <div className="cart">
             <a href="cart.html" className="nav-link">
               <i className="bi bi-bag-fill"></i> Cart
+            </a>
+          </div>
+          
+          <div className="loginright">
+            <a href="login.html" className="nav-link">
+              <i className="bi-person-fill"></i> Login
+            </a>
+          </div>
+          <div className="signup-right">
+            <a href="signup.html" className="nav-link">
+              <i className="bi-person-plus-fill"></i> Signup
             </a>
           </div>
 
@@ -44,7 +64,42 @@ const Header = () => {
           </button>
         </div>
       </nav>
-      <img href="" src="./public/homebg.png" className="bgimg" />
+      {/* <img href="" src="./public/homebg.png" className="bgimg" /> */}
+      <div
+        id="carouselExampleInterval"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-interval="5000">
+            <img src="./public/pic4.png" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item" data-interval="5000">
+            <img src="./public/pic5.png" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item" data-interval="5000">
+            <img src="./public/pic6.png" class="d-block w-100" alt="..." />
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleInterval"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleInterval"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
+      </div>
     </header>
   );
 };
@@ -255,7 +310,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="sitemap-2">
-            <div className="text-wrapper">Working Our</div>
+            <div className="text-wrapper">Working Hours</div>
             <div className="div">Monday/friday 9:00-23:00</div>
             <div className="div-wrapper">
               <div className="text-wrapper-2">Saturday 10:00-21:00</div>
