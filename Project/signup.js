@@ -1,4 +1,4 @@
-const { useState } = React;
+const { useState, browserHistory } = React;
 
 const Header = () => {
   return (
@@ -91,9 +91,11 @@ const Main = () => {
         setEmail('');
         setPassword('');
         setConfirmPassword('');
+        window.location.href = '/login.html' // idk what's going on lol
       })
       .catch(error => {
         console.error('Error:', error);
+        window.location.href = '/login.html' // idk what's going on lol
       });
   };
 

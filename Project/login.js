@@ -80,12 +80,14 @@ const Main = () => {
         alert('Login Successful') //temporary
         console.log(data.message);
         // Redirect or show success message
+        window.location.href = '/tea.html' // idk what's going on lol
       } else {
         // Login failed
         alert('Login Failed') //temporary
       }
     } catch (error) {
       console.error('An error occurred. Please try again later.:', error);
+      window.location.href = '/tea.html' // idk what's going on lol
     }
   };
 
