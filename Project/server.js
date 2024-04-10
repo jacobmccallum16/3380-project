@@ -64,6 +64,9 @@ app.get('/api/:id', async (req, res) => {
 
 // Basic file server
 // Some of this should be modified if we have time
+app.get('/' , (req, res) => {
+  res.sendFile(`${__dirname}/tea.html`)
+})
 app.get('/css/:file', (req, res) => {
   // console.log(`Requesting CSS file at ${req.params.file}`)
   let file = `${__dirname}/css/${req.params.file}`

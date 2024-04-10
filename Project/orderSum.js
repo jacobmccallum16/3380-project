@@ -1,5 +1,23 @@
 const { useState, useEffect } = React;
 
+// const URI = "http://34.83.182.59:3003/api";
+const URI = "http://127.0.0.1:3003/api";
+
+function formatPrice(price) {
+  let dollars = Math.floor(price);
+  let cents = Math.round((price - dollars) * 100);
+  let formattedPrice = `$ ${dollars}.${cents}`;
+  return formattedPrice;
+}
+function formatAndCalculatePrice(price, qty, setCostFunction) {
+  let newPrice = Math.round(price * qty * 100) / 100;
+  let dollars = Math.floor(newPrice);
+  let cents = Math.round((newPrice - dollars) * 100);
+  setCostFunction(newPrice);
+  let formattedPrice = `$ ${dollars}.${cents}`;
+  return formattedPrice;
+}
+
 const Header = () => {
   return (
     <header>
@@ -17,7 +35,7 @@ const Header = () => {
               <a href="home.html" className="nav-link">
                 Home
               </a>
-              <a href="index.html" className="nav-link">
+              <a href="tea.html" className="nav-link">
                 Tea
               </a>
               <a href="about.html" className="nav-link">
@@ -49,6 +67,75 @@ const Header = () => {
   );
 };
 
+const Card = (props) => {
+  const [data, setData] = useState(null);
+  const [inCartQty, setInCartQty] = useState(0);
+  const [cost, setCost] = useState(0);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        let response = await fetch(`${URI}/${props.prodId}`);
+        let result = await response.json();
+        setData(result);
+        // let price = data.price;
+        // console.log(`price = ${price}`)
+        let qty =
+          localStorage.getItem(props.prodId) == null
+            ? 0
+            : localStorage.getItem(props.prodId);
+        setInCartQty(qty);
+        console.log(`${props.prodId}: ${inCartQty}`);
+        // console.log(result)
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <div class="card">
+      {data ? (
+        <div class="frame-284">
+          <img class="rectangle-1 rectangle" src={data.image} height="100" width="100"/>
+          <div class="frame-283">
+            <div class="flex-col-2 flex-col-8">
+              <div class="vegan-powder inter-medium-fuscous-gray-18px">{data.title}</div>
+              <p class="cloud-set-baked-sett inter-normal-suva-gray-12px">{data.origin}</p>
+              <div class="price price-3 inter-semi-bold-fuscous-gray-16px">{formatAndCalculatePrice(data.price, inCartQty, setCost)}</div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div class="frame-284">
+          <img class="rectangle-1 rectangle" height="100" width="100"/>
+          <div class="frame-283">
+            <div class="flex-col-2 flex-col-8">
+              <div class="vegan-powder inter-medium-fuscous-gray-18px">data.title</div>
+              <p class="cloud-set-baked-sett inter-normal-suva-gray-12px">data.origin</p>
+              <div class="price price-3 inter-semi-bold-fuscous-gray-16px">formatPrice(cost)</div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Figure out what's in the cart
+let itemsInCart = [];
+let localStorageLength = localStorage.length;
+for (let i = 0; i < localStorageLength; i++) {
+  let key = localStorage.key(i);
+  // console.log(`key ${i}: ${key}`);
+  if (Number(localStorage.getItem(key)) > 0) {
+    itemsInCart.push(localStorage.key(i));
+  }
+}
+console.log(itemsInCart);
+
 const Main = () => {
   return (
     <main>
@@ -72,95 +159,9 @@ const Main = () => {
                   />
                 </div>
                 <div class="frame-290">
-                  
-                  <div class="card">
-                    <div class="frame-284">
-                      <img
-                        class="rectangle-1 rectangle"
-                        src="./public/sumimg/rectangle-12@2x.png"
-                        alt="Rectangle 12"
-                      />
-                      <div class="frame-283">
-                        <div class="flex-col-2 flex-col-8">
-                          <div class="vegan-powder inter-medium-fuscous-gray-18px">
-                            Vegan Powder
-                          </div>
-                          <p class="cloud-set-baked-sett inter-normal-suva-gray-12px">
-                            Cloud Set Baked Setting &amp; Smoothing Talc
-                          </p>
-                          <div class="price price-3 inter-semi-bold-fuscous-gray-16px">
-                            $ 15.00
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="frame-284">
-                      <img
-                        class="rectangle-1 rectangle"
-                        src="./public/sumimg/rectangle-13@2x.png"
-                        alt="Rectangle 13"
-                      />
-                      <div class="frame-283">
-                        <div class="flex-col-3 flex-col-8">
-                          <div class="brow-pencil inter-medium-fuscous-gray-18px">
-                            Brow Pencil
-                          </div>
-                          <div class="angled-mechanical inter-normal-suva-gray-12px">
-                            Angled Mechanical
-                          </div>
-                          <div class="price price-3 inter-semi-bold-fuscous-gray-16px">
-                            $ 04.05
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="frame-284">
-                      <img
-                        class="rectangle-1 rectangle"
-                        src="./public/sumimg/rectangle-14@2x.png"
-                        alt="Rectangle 14"
-                      />
-                      <div class="frame-283">
-                        <div class="flex-col-4 flex-col-8">
-                          <div class="lip-gel inter-medium-fuscous-gray-18px">
-                            Lip Gel
-                          </div>
-                          <div class="ultra-shine-lip-gel inter-normal-suva-gray-12px">
-                            Ultra Shine Lip Gel
-                          </div>
-                          <div class="price price-3 inter-semi-bold-fuscous-gray-16px">
-                            $ 11.25
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="frame-284">
-                      <img
-                        class="rectangle-1 rectangle"
-                        src="./public/sumimg/rectangle-15@2x.png"
-                        alt="Rectangle 15"
-                      />
-                      <div class="frame-283">
-                        <div class="flex-col-5 flex-col-8">
-                          <div class="foundation inter-medium-fuscous-gray-18px">
-                            Foundation
-                          </div>
-                          <div class="the-formula-blends-effortlessly inter-normal-suva-gray-12px">
-                            The formula blends effortlessly,
-                          </div>
-                          <div class="price price-3 inter-semi-bold-fuscous-gray-16px">
-                            $ 28.45
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  {itemsInCart.map(item => {
+                    return (<Card prodId={item} key={item} />)
+                  })}
                 </div>
               </div>
             </div>

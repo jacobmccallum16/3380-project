@@ -1,5 +1,8 @@
 const { useState, useEffect } = React;
 
+// const URI = "http://34.83.182.59:3003/api";
+const URI = "http://127.0.0.1:3003/api";
+
 function formatPrice(price) {
   let dollars = Math.floor(price);
   let cents = Math.round((price - dollars) * 100);
@@ -75,37 +78,37 @@ const Header = () => {
       
       <div
         id="carouselExampleInterval"
-        class="carousel slide"
+        className="carousel slide"
         data-ride="carousel"
       >
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-interval="5000">
-            <img src="./public/pic1.png" class="d-block w-100" alt="..." />
+        <div className="carousel-inner">
+          <div className="carousel-item active" data-interval="5000">
+            <img src="./public/pic1.png" className="d-block w-100" alt="..." />
           </div>
-          <div class="carousel-item" data-interval="5000">
-            <img src="./public/pic2.png" class="d-block w-100" alt="..." />
+          <div className="carousel-item" data-interval="5000">
+            <img src="./public/pic2.png" className="d-block w-100" alt="..." />
           </div>
-          <div class="carousel-item" data-interval="5000">
-            <img src="./public/pic3.png" class="d-block w-100" alt="..." />
+          <div className="carousel-item" data-interval="5000">
+            <img src="./public/pic3.png" className="d-block w-100" alt="..." />
           </div>
         </div>
         <a
-          class="carousel-control-prev"
+          className="carousel-control-prev"
           href="#carouselExampleInterval"
           role="button"
           data-slide="prev"
         >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only"></span>
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="sr-only"></span>
         </a>
         <a
-          class="carousel-control-next"
+          className="carousel-control-next"
           href="#carouselExampleInterval"
           role="button"
           data-slide="next"
         >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only"></span>
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="sr-only"></span>
         </a>
       </div>
     </header>
@@ -150,7 +153,11 @@ const CardCol = (props) => {
       prevQuantity = 0;
     }
     prevQuantity += change;
-    localStorage.setItem(prodId, prevQuantity);
+    if (prevQuantity == 0) { 
+      localStorage.removeItem(prodId);
+    } else {
+      localStorage.setItem(prodId, prevQuantity);
+    }
     console.log(localStorage);
     setInCartQty(prevQuantity);
   };
@@ -249,8 +256,6 @@ for (let i = 0; i < localStorageLength; i++) {
 }
 console.log(`itemsInCart:`);
 console.log(itemsInCart);
-
-const URI = "http://34.83.182.59:3003/api";
 
 const Main = () => {
   // state = {
