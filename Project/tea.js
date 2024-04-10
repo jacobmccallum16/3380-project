@@ -11,6 +11,8 @@ function formatPrice(price) {
 }
 
 const Header = () => {
+  const [username, setUsername] = useState("");
+
   useEffect(() => {
     // Initialize Bootstrap Carousel when component mounts
     const carouselElement = document.querySelector(".carousel");
@@ -19,6 +21,23 @@ const Header = () => {
         interval: 5000, // Set the interval in milliseconds (2 seconds in this case)
       });
     }
+
+    // Check if user is logged in & fetch their username
+    const fetchUsername = async () => {
+      try {
+        // console.log(`fetching from "${URI}/username"`)
+        let response = await fetch(`${URI}/session`)
+        let result = await response.json()
+        console.log(response)
+        console.log(result)
+        console.log(JSON.stringify(response))
+        console.log(JSON.stringify(result))
+        setUsername(result.fullname)
+      } catch (error) {
+        console.error("Error fetching user data:", error)
+      }
+    }
+    fetchUsername();
   }, []);
 
   return (
@@ -51,9 +70,15 @@ const Header = () => {
             </a>
           </div>
           <div className="loginright">
-            <a href="login.html" className="nav-link">
-              <i className="bi-person-fill"></i> Login
-            </a>
+            {username ? (
+              <a href="login.html" className="nav-link">
+                <i className="bi-person-fill"></i> {username}
+              </a>
+            ) : (
+              <a href="login.html" className="nav-link">
+                <i className="bi-person-fill"></i> Login
+              </a>
+            )}
           </div>
           <div className="signup-right">
             <a href="signup.html" className="nav-link">
