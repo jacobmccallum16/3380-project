@@ -11,9 +11,12 @@ const URI = "mongodb+srv://jacob:mango@fullstackproject.pijv5qw.mongodb.net/teao
 const app = express()
 const port = process.env.PORT || 3003; // MAC might be different for this part??
 
+const path = require('path');
+
 // Middlewares
 app.use(cors())
 app.use(express.json())
+app.use(express.static(path.join(__dirname, '..', 'Project')));
 
 // const URI = "mongodb://localhost:27017/3380-Project"
 // "/teaorganic/teas"
@@ -146,10 +149,38 @@ router.post('/register', async (req, res) => {
 
 		// Save the user to the database
 		await newUser.save();
-
 		res.status(201).json({ message: 'User registered successfully' });
 	} catch (error) {
 		console.error('Error registering user:', error);
 		res.status(500).json({ message: 'Internal server error' });
 	}
+});
+
+
+
+router.post('/login', async (req, res, next) => {
+    const { email, password } = req.body;
+
+    try {
+        if (!email || !password) {
+			return res.status(400).json({ message: 'All fields required.' });
+        }
+
+        const user = await User.findOne({ email: email });
+
+        if (!user) {
+			return res.status(401).json({ message: 'User not found' });
+        }
+
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+
+        if (!isPasswordValid) {
+			return res.status(401).json({ message: 'Invalid password' });
+        }
+
+        // Password is valid, login successful
+		res.status(200).json({ message: 'Login successful' });
+    } catch (error) {
+        next(error);
+    }
 });
