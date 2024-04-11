@@ -59,7 +59,7 @@ const Main = () => {
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const URI = 'http://localhost:3003/api/login'
+  const URI = `${URI}/login`
 
   const handleSubmit = async (event) => {
     event.preventDefault();
