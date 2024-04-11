@@ -386,12 +386,12 @@ const Main = () => {
         <form className="col-6 offset-3 row">
             <div className="input-group mb-3">
               <input type="text" className="form-control" name="searchString" value={searchTerm} onChange={handleSearchChange}></input>
-              <input type="submit" className="btn btn-green" value="Search" disable></input>
+              <input type="submit" className="btn btn-green" value="Search" disable="true"></input>
             </div>
           </form>
           <div className="col-3"></div>
           {products.map(product => (
-            <CardCol cols="4" link={URI} product={product} />
+            <CardCol cols="4" link={URI} product={product} key={product._id}/>
           ))}
         </div>
       </div>
