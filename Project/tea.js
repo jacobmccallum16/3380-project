@@ -236,6 +236,13 @@ const Main = () => {
       <div className="bg-teal-200 rounded-3 pt-3">
         { teas ? (
           <div className="row g-3 p-3">
+            <h6>yes</h6>
+            {teas.map(tea => {
+              <CardCol cols="4" link={URI} prodId={tea._id} />
+            })}
+          </div>
+        ) : (
+          <div className="row g-3 p-3">
             <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72011e" />
             <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720122" />
             <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720123" />
@@ -256,12 +263,6 @@ const Main = () => {
             <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720124" />
             <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720129" />
             <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012b" />
-          </div>
-        ) : (
-          <div className="row g-3 p-3">
-            {teas.map(tea => {
-              <h6>tea!</h6>
-            })}
           </div>
         )}
       </div>
