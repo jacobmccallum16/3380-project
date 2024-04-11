@@ -105,7 +105,6 @@ const Card = (props) => {
         let calculatedCost = calculateCost(result.price, props.qty) // it breaks without this, idk why
         setCost(calculatedCost)
         console.log(`${props.prodId}: ${cost}`);
-        console.log(`orderCost = ${orderCost}`)
         props.addPrice(calculatedCost)
         // console.log(result)
       } catch (error) {
@@ -154,17 +153,63 @@ for (let i = 0; i < localStorageLength; i++) {
   if (Number(localStorage.getItem(key)) > 0) {
     itemsInCart.push(
       { "key": localStorage.key(i),
-        "qty": localStorage.getItem(key)
+        "qty": localStorage.getItem(key),
+        "price": 0,
+        "cost": 0
       }
     );
   }
 }
 console.log(itemsInCart);
 
-// Should probably have this inside a component :(
-let orderCost = 0;
+const CheckoutForm = (props) => {
+  return (
+    <form onSubmit={props.submitCheckout} id="orderForm" className="d-none">
+      <input hidden name="productTotal" value={props.state.totalPrice}/>
+      <input hidden name="taxTotal" value={props.state.taxTotal}/>
+      <input hidden name="total" value={props.state.total}/>
+    </form>
+  )
+}
 
 const Main = (props) => {
+
+  const submitCheckout = async (event) => {
+    event.preventDefault();
+
+    try {
+      let submitData = {
+        productTotal: props.state.productTotal,
+        taxTotal: props.state.taxTotal,
+        total: props.state.TOTAL,
+      }
+      const response = await fetch(`${localURI}/orders/checkout`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submitData),
+      });
+
+      const responseData = await response.json();
+      console.log(responseData);
+
+    //   if (response.ok) {
+    //     // Login successful
+    //     alert('Login Successful') //temporary
+    //     console.log(data.message);
+    //     // Redirect or show success message
+    //     window.location.href = '/tea.html' // idk what's going on lol
+    //   } else {
+    //     // Login failed
+    //     alert('Login Failed') //temporary
+    //   }
+    } catch (error) {
+      console.error("ERROR", error)
+    //   console.error('An error occurred. Please try again later.:', error);
+    //   window.location.href = '/tea.html' // idk what's going on lol
+    }
+  };
 
   return (
     <main>
@@ -188,8 +233,8 @@ const Main = (props) => {
                   />
                 </div>
                 <div className="frame-290">
-                  {itemsInCart.map(item => {
-                    return (<Card prodId={item.key} key={item.key} qty={item.qty} cost={item.qty} addPrice={props.addPrice} />)
+                  {props.state.itemsInCart.map(item => {
+                    return (<Card item={item} prodId={item.key} key={item.key} qty={item.qty} cost={item.qty} addPrice={props.addPrice} />)
                   })}
                 </div>
               </div>
@@ -236,7 +281,12 @@ const Main = (props) => {
                 <div className="frame-296-item">{formatPrice(props.state.TOTAL)}</div>
               </div>
               <div className="button-container">
-                <button className="order-btn">Order</button>
+                <form onSubmit={submitCheckout} id="orderForm" className="d-none">
+                  <input hidden readOnly name="productTotal" value={props.state.productTotal}/>
+                  <input hidden readOnly name="taxTotal" value={props.state.taxTotal}/>
+                  <input hidden readOnly name="total" value={props.state.TOTAL}/>
+                </form>
+                <button onClick={() => document.getElementById('orderForm').submit()} className="btn order-btn">Order</button>
               </div>
             </div>
           </div>
@@ -265,16 +315,15 @@ const Main = (props) => {
 class App extends React.Component {
   state = {
     itemsInCart: itemsInCart,
-    ORDERCOST: orderCost,
     productTotal: 0,
     taxTotal: 0,
     TOTAL: 0
   }
   addPrice = (price) => {
     this.setState(prevState => {
-      let newProductTotal = prevState.productTotal + price
+      let newProductTotal = Math.round((prevState.productTotal + price) * 100) / 100
       let newTaxTotal = Math.round(newProductTotal * 0.12 * 100) / 100
-      let newTOTAL = newProductTotal + newTaxTotal
+      let newTOTAL = Math.round((newProductTotal + newTaxTotal) * 100) / 100
       return {
         productTotal: newProductTotal,
         taxTotal: newTaxTotal,
@@ -283,16 +332,6 @@ class App extends React.Component {
     });
     console.log(this.state.productTotal)
   };
-  updateCost = (addedValue) => {
-    this.setState( prevState => {
-      console.log(`orderCost: ${prevState.ORDERCOST}`)
-      let newOrderCost = prevState.ORDERCOST + addedValue
-      console.log(`new orderCost: ${newOrderCost}`)
-      return {
-        ORDERCOST: newOrderCost
-      }
-    })
-  }
 
   render() {
     return (
