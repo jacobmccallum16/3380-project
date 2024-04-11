@@ -233,7 +233,12 @@ const CardCol = (props) => {
   useEffect(() => {
 
     setData(props.product)
-
+    let qty = Number(localStorage.getItem(props.product._id))
+    if (qty != null) {
+      setInCartQty(qty)
+    } else {
+      setInCartQty(0)
+    }
     // fetchData();
   }, []);
 
