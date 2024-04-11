@@ -177,22 +177,28 @@ const Main = (props) => {
   const submitCheckout = async (event) => {
     event.preventDefault();
 
-    try {
-      let submitData = {
-        productTotal: props.state.productTotal,
-        taxTotal: props.state.taxTotal,
-        total: props.state.TOTAL,
-      }
-      const response = await fetch(`${localURI}/orders/checkout`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(submitData),
-      });
+    // THIS IS LITERALLY SO MUCH EASIER WTF WHY DIDN'T I THINK OF THIS EARLIER AHHHHH
+    document.getElementById('formProductTotal').value = props.state.productTotal
+    document.getElementById('formTaxTotal').value = props.state.taxTotal
+    document.getElementById('formTotal').value = props.state.TOTAL
+    document.getElementById('orderForm').submit()
 
-      const responseData = await response.json();
-      console.log(responseData);
+    // try {
+    //   let submitData = {
+    //     productTotal: props.state.productTotal,
+    //     taxTotal: props.state.taxTotal,
+    //     total: props.state.TOTAL,
+    //   }
+    //   const response = await fetch(`${localURI}/orders/checkout`, {
+    //     method: 'GET',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(submitData),
+    //   });
+
+    //   const responseData = await response.json();
+    //   console.log(responseData);
 
     //   if (response.ok) {
     //     // Login successful
@@ -203,12 +209,12 @@ const Main = (props) => {
     //   } else {
     //     // Login failed
     //     alert('Login Failed') //temporary
-    //   }
-    } catch (error) {
-      console.error("ERROR", error)
+    // //   }
+    // } catch (error) {
+    //   console.error("ERROR", error)
     //   console.error('An error occurred. Please try again later.:', error);
     //   window.location.href = '/tea.html' // idk what's going on lol
-    }
+    // }
   };
 
   return (
@@ -281,12 +287,12 @@ const Main = (props) => {
                 <div className="frame-296-item">{formatPrice(props.state.TOTAL)}</div>
               </div>
               <div className="button-container">
-                <form onSubmit={submitCheckout} id="orderForm" className="d-none">
-                  <input hidden readOnly name="productTotal" value={props.state.productTotal}/>
-                  <input hidden readOnly name="taxTotal" value={props.state.taxTotal}/>
-                  <input hidden readOnly name="total" value={props.state.TOTAL}/>
+                <form action="/api/orders/checkout" method="POST" id="orderForm" className="d-none">
+                  <input type="hidden" name="productTotal" id="formProductTotal" />
+                  <input type="hidden" name="taxTotal" id="formTaxTotal"/>
+                  <input type="hidden" name="total" id="formTotal"/>
                 </form>
-                <button onClick={() => document.getElementById('orderForm').submit()} className="btn order-btn">Order</button>
+                <button onClick={submitCheckout} className="btn order-btn">Order</button>
               </div>
             </div>
           </div>

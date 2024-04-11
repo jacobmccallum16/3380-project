@@ -71,6 +71,7 @@ const orderSchema = new Schema({
   taxTotal: { type: Number, required: true},
   total: { type: Number, required: true}
 })
+const Order = mongoose.model("Order", orderSchema)
 
 // Quick test route for debugging
 app.get('/hi', (req, res) => {
@@ -167,15 +168,19 @@ app.get('/api/username', (req, res) => {
   }
 })
 // Orders
-app.get('/api/orders/checkout', async (req, res) => {
-  console.log("hi")
-  try {
-    console.log(req.body)
-    res.json(JSON.stringify(req.body))
-  } catch {
-    console.log(req.body)
-    res.json(JSON.stringify(req.body))
-  }
+app.post('/api/orders/checkout', async (req, res) => {
+  console.log("hii")
+  let { fullname, email } = req.session;
+  let { productTotal, taxTotal, total } = req.body;
+  console.log(req.body)
+  console.log(req.session)
+  let newOrder = await new Order({
+    fullname, email, productTotal, taxTotal, total
+  })
+  console.log(newOrder)
+  newOrder.save()
+    .then(() => res.redirect('../../orderPlaced.html'))
+    .catch(() => res.redirect('orderSum.html')) // real customers would think this was super sketchy lol
 })
 
 // Teas
