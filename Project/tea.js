@@ -16,7 +16,7 @@ const Header = () => {
     const fetchUsername = async () => {
       try {
         // console.log(`fetching from "${URI}/username"`)
-        let response = await fetch(`${localURI}/session`)
+        let response = await fetch(`/api/session`)
         let result = await response.json()
         console.log(response)
         console.log(result)
@@ -29,6 +29,15 @@ const Header = () => {
     }
     fetchUsername();
   }, []);
+
+  const handleLogout = () => {
+    // Clear session cookie
+    fetch('/api/logout', { method: 'POST', credentials: 'include' })
+      .then(() => {
+        window.location.href = '/login.html';
+      })
+      .catch(error => console.error('Logout failed:', error));
+  }
 
   return (
     <header>
@@ -61,7 +70,7 @@ const Header = () => {
           </div>
           <div className="loginright">
             {username ? (
-              <a href="login.html" className="nav-link">
+              <a href="profile.html" className="nav-link">
                 <i className="bi-person-fill"></i> {username}
               </a>
             ) : (
@@ -70,11 +79,22 @@ const Header = () => {
               </a>
             )}
           </div>
-          <div className="signup-right">
-            <a href="signup.html" className="nav-link">
-              <i className="bi-person-plus-fill"></i> Signup
-            </a>
-          </div>
+          {!username && (
+            // don't show signup button if logged in
+            <div className="signup-right">
+              <a href="signup.html" className="nav-link">
+                <i className="bi-person-plus-fill"></i> Signup
+              </a>
+            </div>
+          )}
+
+          {username && (
+            <div className="logout">
+              <button className="nav-link" onClick={handleLogout}>
+                <i className="bi bi-box-arrow-right"></i> Logout
+              </button>
+            </div>
+          )}
 
           <button
             className="navbar-toggler"
@@ -90,7 +110,7 @@ const Header = () => {
         </div>
       </nav>
 
-      
+
       <div
         id="carouselExampleInterval"
         className="carousel slide"
@@ -129,6 +149,7 @@ const Header = () => {
     </header>
   );
 };
+
 const Footer = () => {
   return (
     <div className="frame">

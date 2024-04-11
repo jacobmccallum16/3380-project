@@ -1,6 +1,8 @@
 const { useState, useEffect } = React;
+const URI = "http://127.0.0.1:3003/api";
 
 const Header = () => {
+  const [username, setUsername] = useState("");
   useEffect(() => {
     // Initialize Bootstrap Carousel when component mounts
     const carouselElement = document.querySelector(".carousel");
@@ -9,7 +11,32 @@ const Header = () => {
         interval: 5000, // Set the interval in milliseconds (2 seconds in this case)
       });
     }
+    // Check if user is logged in & fetch their username
+    const fetchUsername = async () => {
+      try {
+        // console.log(`fetching from "${URI}/username"`)
+        let response = await fetch(`/api/session`)
+        let result = await response.json()
+        console.log(response)
+        console.log(result)
+        console.log(JSON.stringify(response))
+        console.log(JSON.stringify(result))
+        setUsername(result.fullname)
+      } catch (error) {
+        console.error("Error fetching user data:", error)
+      }
+    }
+    fetchUsername();
   }, []);
+
+  const handleLogout = () => {
+    // Clear session cookie
+    fetch('/api/logout', { method: 'POST', credentials: 'include' })
+      .then(() => {
+        window.location.href = '/login.html';
+      })
+      .catch(error => console.error('Logout failed:', error));
+  }
   return (
     <header>
       <nav className="navbar navbar-expand-md">
@@ -39,17 +66,35 @@ const Header = () => {
               <i className="bi bi-bag-fill"></i> Cart
             </a>
           </div>
-          
+
           <div className="loginright">
-            <a href="login.html" className="nav-link">
-              <i className="bi-person-fill"></i> Login
-            </a>
+            {username ? (
+              <a href="profile.html" className="nav-link">
+                <i className="bi-person-fill"></i> {username}
+              </a>
+            ) : (
+              <a href="login.html" className="nav-link">
+                <i className="bi-person-fill"></i> Login
+              </a>
+            )}
           </div>
-          <div className="signup-right">
-            <a href="signup.html" className="nav-link">
-              <i className="bi-person-plus-fill"></i> Signup
-            </a>
-          </div>
+
+          {!username && (
+            // don't show signup button if logged in
+            <div className="signup-right">
+              <a href="signup.html" className="nav-link">
+                <i className="bi-person-plus-fill"></i> Signup
+              </a>
+            </div>
+          )}
+
+          {username && (
+            <div className="logout">
+              <button className="nav-link" onClick={handleLogout}>
+                <i className="bi bi-box-arrow-right"></i> Logout
+              </button>
+            </div>
+          )}
 
           <button
             className="navbar-toggler"

@@ -109,6 +109,7 @@ const Main = () => {
                     value={email}
                     onChange={(event) => setEmail(event.target.value)}
                     name="email"
+                    required
                   />
                 </div>
                 <div class="password_-input">
@@ -120,6 +121,7 @@ const Main = () => {
                     value={password}
                     onChange={(event) => setPassword(event.target.value)}
                     name="password"
+                    required
                   />
                 </div>
                 <div class="action-buttons">
