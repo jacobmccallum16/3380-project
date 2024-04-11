@@ -208,6 +208,9 @@ app.get('/api/:id', async (req, res) => {
     .then((tea) => res.json(tea))
     .catch((err) => res.status(400).json(`Error fetch tea: ${err}`))
 })
+app.get('/api/tea/search/:params' , async (req, res) => {
+  //
+})
 app.post('/api/add', async (req, res) => {
   let title = req.body.title
   let type = req.body.type
