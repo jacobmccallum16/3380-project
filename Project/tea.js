@@ -1,7 +1,7 @@
 const { useState, useEffect } = React;
 
 // const URI = "http://34.83.182.59:3003/api";
-const URI = "http://127.0.0.1:3003/api";
+const URI = "/api";
 const localURI = "/api"
 
 function formatPrice(price) {
@@ -386,7 +386,7 @@ const Main = () => {
         <form className="col-6 offset-3 row">
             <div className="input-group mb-3">
               <input type="text" className="form-control" name="searchString" value={searchTerm} onChange={handleSearchChange}></input>
-              <input type="submit" class="btn btn-green" value="Search"></input>
+              <input type="submit" className="btn btn-green" value="Search" disable></input>
             </div>
           </form>
           <div className="col-3"></div>
