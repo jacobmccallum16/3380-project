@@ -80,7 +80,7 @@ const Header = () => {
           </div>
           <div className="loginright">
             {username ? (
-              <a href="login.html" className="nav-link">
+              <a href="profile.html" className="nav-link">
                 <i className="bi-person-fill"></i> {username}
               </a>
             ) : (
