@@ -210,12 +210,13 @@ app.get('/api/:id', async (req, res) => {
 })
 app.get('/api/tea/search/:searchTerm' , async (req, res) => {
   let searchTerm = req.params.searchTerm.toLowerCase()
-  await Tea.find({name: new RegExp(searchTerm, 'i')})
-    then((teas) => {
-      teas.filter(tea => tea.title.toLowerCase().includes(searchTerm));
-      return res.json(teas);
-    })
-    .catch((err) => res.status(400).json(`Error: ${err}`))
+  const teas = await Tea.find();
+  try {
+    const filteredTeas = teas.filter(tea => tea.title.toLowerCase().includes(searchTerm));
+    res.json(filteredTeas)
+  } catch {
+    res.status(400).json(`Error`)
+  }
 })
 app.post('/api/add', async (req, res) => {
   let title = req.body.title
