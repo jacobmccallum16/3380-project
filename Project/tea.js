@@ -268,7 +268,7 @@ const CardCol = (props) => {
                 </span>
               </h6>
               <p className="card-text text-start small">
-                &emsp;{data.description}
+                &emsp;{props.product.description}
               </p>
             </div>
             {inCartQty > 0 ? (
@@ -294,7 +294,7 @@ const CardCol = (props) => {
             ) : (
               <div className="text-end pt-2">
                 <button
-                  onClick={() => handleClick(props.prodId, 1)}
+                  onClick={() => handleClick(props.product._id, 1)}
                   className="btn1 btn-green"
                 >
                   Add to Cart
