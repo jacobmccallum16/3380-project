@@ -213,6 +213,7 @@ app.get('/api/tea/search/:searchTerm' , async (req, res) => {
   const teas = await Tea.find();
   try {
     const filteredTeas = teas.filter(tea => tea.title.toLowerCase().includes(searchTerm));
+    console.log(filteredTeas)
     res.json(filteredTeas)
   } catch {
     res.status(400).json(`Error`)
