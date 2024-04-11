@@ -58,9 +58,6 @@ const Header = () => {
               <a href="tea.html" className="nav-link">
                 Tea
               </a>
-              <a href="search.html" className="nav-link">
-                Search?
-              </a>
               <a href="about.html" className="nav-link">
                 About
               </a>
@@ -213,58 +210,36 @@ const Main = () => {
   // state = {
   //   itemsInCart: itemsInCart
   // }
-  const [teas, setTeas] = useState(null);
-
-  useEffect(() => {
-    const fetchTeas = async () => {
-      try {
-        let response = await fetch(`${URI}/`);
-        let result = await response.json();
-        setTeas(result);
-        // console.log(`${props.prodId}: ${inCartQty}`);
-        // console.log(result)
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchTeas();
-  }, []);
 
   return (
     <main className="bg-teal-100 text-center p-3">
       <div className="bg-teal-200 rounded-3 pt-3">
-        { teas ? (
-          <div className="row g-3 p-3">
-            <h6>yes</h6>
-            {teas.map(tea => {
-              <CardCol cols="4" link={URI} prodId={tea._id} />
-            })}
-          </div>
-        ) : (
-          <div className="row g-3 p-3">
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72011e" />
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720122" />
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720123" />
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720126" />
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720128" />
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012a" />
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012d" />
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72011c" />
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72011d" />
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72011f" />
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720120" />
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720121" />
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720125" />
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720127" />
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012c" />
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012e" />
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012f" />
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720124" />
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720129" />
-            <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012b" />
-          </div>
-        )}
+        <div className="row g-3 p-3">
+          {/* {itemsInCart.map(item => {
+            let link = `products/` + item
+            return (<CardCol cols="4" link={link} prodId={item}/>)
+          })} */}
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72011e" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720122" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720123" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720126" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720128" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012a" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012d" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72011c" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72011d" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72011f" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720120" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720121" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720125" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720127" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012c" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012e" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012f" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720124" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720129" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012b" />
+        </div>
       </div>
     </main>
   );

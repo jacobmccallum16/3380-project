@@ -208,8 +208,11 @@ app.get('/api/:id', async (req, res) => {
     .then((tea) => res.json(tea))
     .catch((err) => res.status(400).json(`Error fetch tea: ${err}`))
 })
-app.get('/api/tea/search/:params' , async (req, res) => {
-  //
+app.get('/api/tea/search/:searchTerm' , async (req, res) => {
+  let searchTeam = req.params.searchTerm
+  await Tea.find({name: new RegExp(searchTerm, 'i')})
+    then((teas) => res.json(teas))
+    .catch((err) => res.status(400).json(`Error: ${err}`))
 })
 app.post('/api/add', async (req, res) => {
   let title = req.body.title
