@@ -388,10 +388,10 @@ const Main = () => {
     <main className="bg-teal-100 text-center p-3">
       <div className="bg-teal-200 rounded-3 pt-3">
         <div className="row g-3 p-3">
-        <form className="col-6 offset-3 row">
+          <form className="col-6 offset-3 row">
             <div className="input-group mb-3">
               <input type="text" className="form-control" name="searchString" value={searchTerm} onChange={handleSearchChange}></input>
-              <input type="submit" className="btn btn-green" value="Search" disable="true"></input>
+              <input type="submit" className="btn btn-green disabled" value="Search" disable="true"></input>
             </div>
           </form>
           <div className="col-3"></div>
