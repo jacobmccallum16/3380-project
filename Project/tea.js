@@ -390,7 +390,7 @@ const Main = () => {
         <div className="row g-3 p-3">
           <form className="col-6 offset-3 row" action="/tea.html">
             <div className="input-group mb-3">
-              <input type="text" className="form-control" name="searchString" value={searchTerm} onChange={handleSearchChange}></input>
+              <input type="text" className="form-control" name="searchString" value={searchTerm} onChange={handleSearchChange} placeholder="Type to search"></input>
               <input type="submit" className="btn btn-green disabled" value="Search" disabled={true}></input>
             </div>
           </form>
