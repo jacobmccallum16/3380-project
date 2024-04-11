@@ -209,9 +209,12 @@ app.get('/api/:id', async (req, res) => {
     .catch((err) => res.status(400).json(`Error fetch tea: ${err}`))
 })
 app.get('/api/tea/search/:searchTerm' , async (req, res) => {
-  let searchTeam = req.params.searchTerm
+  let searchTerm = req.params.searchTerm.toLowerCase()
   await Tea.find({name: new RegExp(searchTerm, 'i')})
-    then((teas) => res.json(teas))
+    then((teas) => {
+      teas.filter(tea => tea.title.toLowerCase().includes(searchTerm));
+      return res.json(teas);
+    })
     .catch((err) => res.status(400).json(`Error: ${err}`))
 })
 app.post('/api/add', async (req, res) => {
