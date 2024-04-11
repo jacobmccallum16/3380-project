@@ -1,14 +1,3 @@
-const { useState, useEffect } = React;
-
-// const URI = "http://34.83.182.59:3003/api";
-const URI = "http://127.0.0.1:3003/api";
-
-function formatPrice(price) {
-  let dollars = Math.floor(price);
-  let cents = Math.round((price - dollars) * 100);
-  let formattedPrice = `$ ${dollars}.${cents}`;
-  return formattedPrice;
-}
 
 const Header = () => {
   const [username, setUsername] = useState("");
@@ -306,6 +295,40 @@ const Footer = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+// Figure out what's in the cart
+let itemsInCart = [];
+let localStorageLength = localStorage.length;
+for (let i = 0; i < localStorageLength; i++) {
+  let key = localStorage.key(i);
+  // console.log(`key ${i}: ${key}`);
+  if (Number(localStorage.getItem(key)) > 0) {
+    itemsInCart.push(localStorage.key(i));
+  }
+}
+console.log(itemsInCart);
+
+const Main = () => {
+  // state = {
+  //   itemsInCart: itemsInCart
+  // }
+
+  return (
+    <main className="bg-teal-100 text-center p-3">
+      <div className="bg-teal-200 rounded-3 pt-3">
+        <div className="row g-3 p-3">
+          {itemsInCart.map(item => {
+            return (<CardCol cols="4" prodId={item} key={item}/>)
+          })}
+        </div>
+        <div className="button-container">
+          <a className="btn checkout-btn" href="orderSum.html" type="button">Check Out</a>
+        </div>
+      </div>
+
+    </main>
   );
 };
 

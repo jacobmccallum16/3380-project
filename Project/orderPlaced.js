@@ -105,6 +105,9 @@ const Footer = () => {
   );
 };
 
+// If anyone reaches this page we'll trust that they completed an order and there cart can be emptied
+localStorage.clear()
+
 class App extends React.Component {
   render() {
     return (

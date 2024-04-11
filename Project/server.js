@@ -62,6 +62,17 @@ const userSchema = new Schema({
 })
 const User = mongoose.model("User", userSchema)
 
+// order
+// including redundant info because it's easier
+const orderSchema = new Schema({
+  fullname: { type: String, required: true},
+  email: { type: String, required: true},
+  productTotal: { type: Number, required: true},
+  taxTotal: { type: Number, required: true},
+  total: { type: Number, required: true}
+})
+const Order = mongoose.model("Order", orderSchema)
+
 // Quick test route for debugging
 app.get('/hi', (req, res) => {
   console.log("hi")
@@ -155,6 +166,21 @@ app.get('/api/username', (req, res) => {
     console.log('error')
     res.send(`{ "fullname": "-" }`)
   }
+})
+// Orders
+app.post('/api/orders/checkout', async (req, res) => {
+  console.log("hii")
+  let { fullname, email } = req.session;
+  let { productTotal, taxTotal, total } = req.body;
+  console.log(req.body)
+  console.log(req.session)
+  let newOrder = await new Order({
+    fullname, email, productTotal, taxTotal, total
+  })
+  console.log(newOrder)
+  newOrder.save()
+    .then(() => res.redirect('../../orderPlaced.html'))
+    .catch(() => res.redirect('orderSum.html')) // real customers would think this was super sketchy lol
 })
 
 //logout
