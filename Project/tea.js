@@ -275,7 +275,7 @@ const CardCol = (props) => {
               <div className="text-end pt-2">
                 <div className="btn-group">
                   <button
-                    onClick={() => handleClick(props.prodId, -1)}
+                    onClick={() => handleClick(props.product._id, -1)}
                     className="btn1 btn-red"
                   >
                     &ensp;-1&ensp;
@@ -284,7 +284,7 @@ const CardCol = (props) => {
                     &ensp;<b>{inCartQty}</b> in cart&ensp;
                   </a>
                   <button
-                    onClick={() => handleClick(props.prodId, 1)}
+                    onClick={() => handleClick(props.product._id, 1)}
                     className="btn1 btn-green"
                   >
                     &ensp;+1&ensp;
