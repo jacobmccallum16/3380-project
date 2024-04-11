@@ -391,7 +391,7 @@ const Main = () => {
           <form className="col-6 offset-3 row" action="/tea.html">
             <div className="input-group mb-3">
               <input type="text" className="form-control" name="searchString" value={searchTerm} onChange={handleSearchChange}></input>
-              <input type="submit" className="btn btn-green disabled" value="Search" disable="true"></input>
+              <input type="submit" className="btn btn-green disabled" value="Search" disabled={true}></input>
             </div>
           </form>
           <div className="col-3"></div>
