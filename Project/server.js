@@ -208,6 +208,16 @@ app.get('/api/:id', async (req, res) => {
     .then((tea) => res.json(tea))
     .catch((err) => res.status(400).json(`Error fetch tea: ${err}`))
 })
+app.get('/api/tea/search/:searchTerm' , async (req, res) => {
+  let searchTerm = req.params.searchTerm.toLowerCase()
+  const teas = await Tea.find();
+  try {
+    const filteredTeas = teas.filter(tea => tea.title.toLowerCase().includes(searchTerm));
+    res.json(filteredTeas)
+  } catch {
+    res.status(400).json(`Error`)
+  }
+})
 app.post('/api/add', async (req, res) => {
   let title = req.body.title
   let type = req.body.type
