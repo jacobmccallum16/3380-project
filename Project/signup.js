@@ -61,7 +61,7 @@ const Main = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   //localhost URI
-  const URI = 'http://localhost:3003/api/register'
+  const URI = '/api/register'
   const handleRegistration = (event) => {
     event.preventDefault();
 
