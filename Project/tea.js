@@ -16,7 +16,7 @@ const Header = () => {
     const fetchUsername = async () => {
       try {
         // console.log(`fetching from "${URI}/username"`)
-        let response = await fetch(`/api/session`)
+        let response = await fetch(`${URI}/session`)
         let result = await response.json()
         console.log(response)
         console.log(result)
