@@ -157,6 +157,19 @@ app.get('/api/username', (req, res) => {
   }
 })
 
+//logout
+app.post('/api/logout', async (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error('Error destroying session:', err);
+      return res.status(500).json({ message: 'Internal server error' });
+    }
+    // Return success response
+    res.clearCookie('connect.sid'); // Clear session cookie
+    res.status(200).json({ message: 'Logout successful' });
+  });
+});
+
 // Teas
 app.get('/api/', async (req, res) => {
   // console.log('API request')
