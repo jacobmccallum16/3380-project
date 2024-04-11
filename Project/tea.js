@@ -216,7 +216,7 @@ const Main = () => {
   const [teas, setTeas] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchTeas = async () => {
       try {
         let response = await fetch(`${URI}/`);
         let result = await response.json();
@@ -228,7 +228,7 @@ const Main = () => {
       }
     };
 
-    fetchData();
+    fetchTeas();
   }, []);
 
   return (
