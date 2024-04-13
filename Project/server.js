@@ -11,7 +11,7 @@ const app = express()
 const port = process.env.PORT || 3003;
 
 app.use(cors({
-  origin: "http://localhost:3003",
+  origin: "http://34.105.6.153:3003",
   credentials: true,
 }))
 app.use(express.json())
@@ -207,6 +207,18 @@ app.get('/api/:id', async (req, res) => {
   Tea.findById(req.params.id)
     .then((tea) => res.json(tea))
     .catch((err) => res.status(400).json(`Error fetch tea: ${err}`))
+})
+app.get('/api/tea/search/:searchTerm' , async (req, res) => {
+  let searchTerm = req.params.searchTerm.toLowerCase()
+  const teas = await Tea.find();
+  try {
+    // const filteredTeas = teas.filter(tea => tea.title.toLowerCase().includes(searchTerm));
+    const filteredTeas = teas.filter(tea => JSON.stringify(tea).toLowerCase().includes(searchTerm));
+    // console.log(filteredTeas)
+    res.json(filteredTeas)
+  } catch {
+    res.status(400).json(`Error`)
+  }
 })
 app.post('/api/add', async (req, res) => {
   let title = req.body.title

@@ -1,7 +1,7 @@
 const { useState, useEffect } = React;
 
-// const URI = "http://34.83.182.59:3003/api";
-const URI = "http://127.0.0.1:3003/api";
+const URI = "http://34.105.6.153:3003/api";
+// const URI = "http://127.0.0.1:3003/api";
 const localURI = "/api"
 
 function formatPrice(price) {

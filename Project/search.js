@@ -1,29 +1,4 @@
-const { useState, useEffect } = React;
-
-// const URI = "http://34.83.182.59:3003/api";
-const URI = "/api";
-const localURI = "/api"
-
-function formatPrice(price) {
-  let dollars = Math.floor(price);
-  let cents = Math.round((price - dollars) * 100);
-  let formattedPrice = `$ ${dollars}.${cents}`;
-  return formattedPrice;
-}
-
-function calculateCost(price, qty) {
-  let newPrice = Math.round(price * qty * 100) / 100;
-  return newPrice;
-}
-
-function formatAndCalculatePrice(price, qty, setCostFunction) {
-  let newPrice = Math.round(price * qty * 100) / 100;
-  let dollars = Math.floor(newPrice);
-  let cents = Math.round((newPrice - dollars) * 100);
-  setCostFunction(newPrice);
-  let formattedPrice = `$ ${dollars}.${cents}`;
-  return formattedPrice;
-}
+// const { useState, useEffect } = React;
 
 const Header = () => {
   const [username, setUsername] = useState("");
@@ -218,127 +193,6 @@ const Footer = () => {
   );
 };
 
-const COLS = [
-  "col-auto",
-  "col-12",
-  "col-12 col-lg-6",
-  "col-12 col-md-6 col-xl-4",
-  "col-12 col-sm-6 col-lg-4 col-xl-3",
-];
-
-const CardCol = (props) => {
-  const [data, setData] = useState(null);
-  const [inCartQty, setInCartQty] = useState(0);
-
-  useEffect(() => {
-
-    setData(props.product)
-    let qty = Number(localStorage.getItem(props.product._id))
-    if (qty != null) {
-      setInCartQty(qty)
-    } else {
-      setInCartQty(0)
-    }
-    // fetchData();
-  }, []);
-
-  const handleClick = (prodId, change) => {
-    let prevQuantity = Number(localStorage.getItem(prodId));
-    if (prevQuantity == null) {
-      prevQuantity = 0;
-    }
-    prevQuantity += change;
-    if (prevQuantity == 0) { 
-      localStorage.removeItem(prodId);
-    } else {
-      localStorage.setItem(prodId, prevQuantity);
-    }
-    console.log(localStorage);
-    setInCartQty(prevQuantity);
-  };
-  return (
-    <div className={COLS[props.cols]}>
-      {data ? (
-        <div className="card h-100 px-1 py-2">
-          <div className="card-body h-100 d-flex flex-column text-start pb-2">
-            <div className="h-100">
-              <div className="text-center mb-2">
-                <img src={props.product.image} height="150" width="150"></img>
-              </div>
-              <h5 className="card-title text-start">{props.product.title}</h5>
-              <h6 className="row">
-                <span className="col-auto">{props.product.type}</span>
-                <span className="ms-auto col-auto">
-                  {formatPrice(props.product.price)}
-                </span>
-              </h6>
-              <p className="card-text text-start small">
-                &emsp;{props.product.description}
-              </p>
-            </div>
-            {inCartQty > 0 ? (
-              <div className="text-end pt-2">
-                <div className="btn-group">
-                  <button
-                    onClick={() => handleClick(props.product._id, -1)}
-                    className="btn1 btn-red"
-                  >
-                    &ensp;-1&ensp;
-                  </button>
-                  <a href="cart.html" className="btn btn-light">
-                    &ensp;<b>{inCartQty}</b> in cart&ensp;
-                  </a>
-                  <button
-                    onClick={() => handleClick(props.product._id, 1)}
-                    className="btn1 btn-green"
-                  >
-                    &ensp;+1&ensp;
-                  </button>
-                </div>
-              </div>
-            ) : (
-              <div className="text-end pt-2">
-                <button
-                  onClick={() => handleClick(props.product._id, 1)}
-                  className="btn1 btn-green"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
-      ) : (
-        <div className="card h-100 pt-2">
-          <div className="card-body h-100 d-flex flex-column text-start">
-            <div className="h-100">
-              <div className="text-center mb-2">
-                <img height="150" width="150"></img>
-              </div>
-              <h5 className="card-title text-start">data.title</h5>
-              <h6 className="row">
-                <span className="col-auto">data.category</span>
-                <span className="ms-auto col-auto">data.rating.rate ⭐️</span>
-              </h6>
-              <p className="card-text text-start small">
-                &emsp;data.description
-              </p>
-            </div>
-            <div className="text-end">
-              <button
-                onClick={() => handleClick(props.prodId)}
-                className="btn btn-green"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-};
-
 // Figure out what's in the cart
 let itemsInCart = [];
 let localStorageLength = localStorage.length;
@@ -353,51 +207,38 @@ console.log(`itemsInCart:`);
 console.log(itemsInCart);
 
 const Main = () => {
-
-  const [products, setProducts] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      if (searchTerm == '') {
-        try {
-          const response = await fetch('/api/');
-          const data = await response.json();
-          setProducts(data)
-        } catch (error) {
-          console.error(`Error fetching products`, error)
-        }
-      } else {
-          try {
-          const response = await fetch(`/api/tea/search/${searchTerm}`);
-          const data = await response.json();
-          setProducts(data)
-        } catch (error) {
-          console.error(`Error fetching products`, error)
-        }
-      }
-    };
-    fetchProducts();
-  }, [searchTerm]);
-
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
-  }
+  // state = {
+  //   itemsInCart: itemsInCart
+  // }
 
   return (
     <main className="bg-teal-100 text-center p-3">
       <div className="bg-teal-200 rounded-3 pt-3">
         <div className="row g-3 p-3">
-          <form className="col-6 offset-3 row" action="/tea.html">
-            <div className="input-group mb-3">
-              <input type="text" className="form-control" name="searchString" value={searchTerm} onChange={handleSearchChange}></input>
-              <input type="submit" className="btn1 btn-black disabled" value="Search" disabled={true}></input>
-            </div>
-          </form>
-          <div className="col-3"></div>
-          {products.map(product => (
-            <CardCol cols="4" link={URI} product={product} key={product._id}/>
-          ))}
+          {/* {itemsInCart.map(item => {
+            let link = `products/` + item
+            return (<CardCol cols="4" link={link} prodId={item}/>)
+          })} */}
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72011e" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720122" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720123" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720126" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720128" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012a" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012d" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72011c" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72011d" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72011f" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720120" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720121" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720125" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720127" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012c" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012e" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012f" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720124" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c720129" />
+          <CardCol cols="4" link={URI} prodId="66049ec7d7c4bfda9c72012b" />
         </div>
       </div>
     </main>

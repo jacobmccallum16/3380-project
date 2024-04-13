@@ -171,10 +171,10 @@ const Main = () => {
                       The Hidden Health Benefits Of Tea
                     </p>
                     <p class="lorem-ipsum-dolor-si text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      In commodo enim sit amet magna semper lacinia. Lorem ipsum
-                      dolor sit amet, consectetur adipiscing elit. In commodo
-                      enim sit amet.
+                      Tea offers more than just a delightful taste—it's packed 
+                      with hidden health benefits. Rich in antioxidants, it can
+                      help fight inflammation and boost the immune system. 
+                      Regular consumption has been linked to a lower risk of heart disease.
                     </p>
                   </div>
                 </div>
@@ -183,9 +183,7 @@ const Main = () => {
             </div>
             <h1 class="why-choose-us x02-headline">Why Choose Us</h1>
             <p class="lorem-ipsum-dolor-si-1 text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-              commodo enim sit amet magna semper lacinia. Lorem ipsum dolor sit
-              amet.
+            Enjoy the peace of mind that comes with knowing your tea is produced sustainably and with the utmost care for nature.
             </p>
           </div>
           <div class="asset-container">
@@ -260,8 +258,7 @@ const Main = () => {
                       <br />
                     </span>
                     <span class="span-1 text">
-                      Et malesuada fames ac turpis egestas maecenas pharetra
-                      convallis met nisl purus.
+                    TeaOrganic guarantees that every leaf is 100% organic
                       <br />
                     </span>
                     <span class="span-2 roboto-normal-mine-shaft-20px">
@@ -272,8 +269,7 @@ const Main = () => {
                       <br />
                     </span>
                     <span class="span-1 text">
-                      Et malesuada fames ac turpis egestas maecenas pharetra
-                      convallis met nisl purus.
+                    TeaOrganic prides itself on providing high-quality teas sourced from premium organic farms worldwide, ensuring an exceptional tea-drinking experience every time.
                       <br />
                     </span>
                     <span class="span-2 roboto-normal-mine-shaft-20px">
@@ -284,8 +280,7 @@ const Main = () => {
                       <br />
                     </span>
                     <span class="span-1 text">
-                      Et malesuada fames ac turpis egestas maecenas pharetra
-                      convallis met nisl purus.
+                    TeaOrganic guarantees always-fresh teas, ensuring that every cup delivers the highest quality and flavor.
                     </span>
                   </p>
                 </div>
