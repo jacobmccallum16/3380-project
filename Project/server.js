@@ -32,8 +32,8 @@ console.log('Trying to connect to MongoDB...')
 mongoose.connect(mongoURI, {useNewURLParser: true, useUnifiedTopology: true})
   .then(() => {
     console.log('...MongoDB connection established successfully!')
-    const server = http.createServer(app)
-    server.listen(port, () => {console.log(`HTTP Server is running on port ${port}`)})
+    // const server = http.createServer(app)
+    // server.listen(port, () => {console.log(`HTTP Server is running on port ${port}`)})
   })
   .catch((error) => {
 		console.log(`...error connecting to MongoDB: ${error.toString()}`)
