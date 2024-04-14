@@ -265,9 +265,7 @@ app.post('/api/delete/:id', async (req, res) => {
 
 // Basic file server
 // Some of this should be modified if we have time
-app.get('/' , (req, res) => {
-  res.sendFile(`${__dirname}/tea.html`)
-})
+app.get('/' , (req, res) => {res.sendFile(`${__dirname}/tea.html`)})
 app.get('/css/:file', (req, res) => {
   // console.log(`Requesting CSS file at ${req.params.file}`)
   let file = `${__dirname}/css/${req.params.file}`
@@ -286,19 +284,28 @@ app.get('/public/:directory/:file', (req, res) => {
 app.get('/public/:file', (req, res) => {
   res.sendFile(`${__dirname}/public/${req.params.file}`)
 })
-// Specific files
-app.get('/tea.js', (req, res) => {
-  console.log(`Serving file:    ${__dirname}/tea.js`)
-  res.sendFile(`${__dirname}/tea.js`)
-})
-app.get('/cart.html', (req, res) => {
-  console.log(`Serving file:    ${__dirname}/cart.html`)
-  res.sendFile(`${__dirname}/cart.html`)
-})
-app.get('/cart.js', (req, res) => {
-  console.log(`Serving file:    ${__dirname}/cart.js`)
-  res.sendFile(`${__dirname}/cart.js`)
-})
+// Specific routes for vercel
+app.get('/about.html', (req, res) => {res.sendFile(`${__dirname}/about.html`)})
+app.get('/about.js', (req, res) => {res.sendFile(`${__dirname}/about.js`)})
+app.get('/cart.html', (req, res) => {res.sendFile(`${__dirname}/cart.html`)})
+app.get('/cart.js', (req, res) => {res.sendFile(`${__dirname}/cart.js`)})
+app.get('/detail.html', (req, res) => {res.sendFile(`${__dirname}/detail.html`)})
+app.get('/detail.js', (req, res) => {res.sendFile(`${__dirname}/detail.js`)})
+app.get('/home.html', (req, res) => {res.sendFile(`${__dirname}/home.html`)})
+app.get('/home.js', (req, res) => {res.sendFile(`${__dirname}/home.js`)})
+app.get('/login.html', (req, res) => {res.sendFile(`${__dirname}/login.html`)})
+app.get('/login.js', (req, res) => {res.sendFile(`${__dirname}/login.js`)})
+app.get('/orderPlaced.html', (req, res) => {res.sendFile(`${__dirname}/orderPlaced.html`)})
+app.get('/orderPlaced.js', (req, res) => {res.sendFile(`${__dirname}/orderPlaced.js`)})
+app.get('/orderSum.html', (req, res) => {res.sendFile(`${__dirname}/orderSum.html`)})
+app.get('/orderSum.js', (req, res) => {res.sendFile(`${__dirname}/orderSum.js`)})
+app.get('/profile.html', (req, res) => {res.sendFile(`${__dirname}/profile.html`)})
+app.get('/profile.js', (req, res) => {res.sendFile(`${__dirname}/profile.js`)})
+app.get('/signup.html', (req, res) => {res.sendFile(`${__dirname}/signup.html`)})
+app.get('/signup.js', (req, res) => {res.sendFile(`${__dirname}/signup.js`)})
+app.get('/tea.html', (req, res) => {res.sendFile(`${__dirname}/tea.html`)})
+app.get('/tea.js', (req, res) => {res.sendFile(`${__dirname}/tea.js`)})
+// Generic routes for Google Cloud and localhost
 app.get('/:file', (req, res) => {
   // console.log(`Requesting file: ${req.params.file}`)
   // console.log(req)
