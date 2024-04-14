@@ -180,7 +180,7 @@ app.post('/api/orders/checkout', async (req, res) => {
   console.log(newOrder)
   newOrder.save()
     .then(() => res.redirect('../../orderPlaced.html'))
-    .catch(() => res.redirect('orderSum.html')) // real customers would think this was super sketchy lol
+    .catch(() => res.redirect('../../orderSum.html')) // real customers would think this was super sketchy lol
 })
 
 //logout
