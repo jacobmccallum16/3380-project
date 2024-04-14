@@ -286,6 +286,19 @@ app.get('/public/:directory/:file', (req, res) => {
 app.get('/public/:file', (req, res) => {
   res.sendFile(`${__dirname}/public/${req.params.file}`)
 })
+// Specific files
+app.get('/tea.js', (req, res) => {
+  console.log(`Serving file:    ${__dirname}/tea.js`)
+  res.sendFile(`${__dirname}/tea.js`)
+})
+app.get('/cart.html', (req, res) => {
+  console.log(`Serving file:    ${__dirname}/cart.html`)
+  res.sendFile(`${__dirname}/cart.html`)
+})
+app.get('/cart.js', (req, res) => {
+  console.log(`Serving file:    ${__dirname}/cart.js`)
+  res.sendFile(`${__dirname}/cart.js`)
+})
 app.get('/:file', (req, res) => {
   // console.log(`Requesting file: ${req.params.file}`)
   // console.log(req)
